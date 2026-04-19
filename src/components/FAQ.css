@@ -70,6 +70,11 @@
   transition: color 0.25s;
 }
 .faq-question:hover { color: var(--gold-light); }
+.faq-question:focus-visible {
+  outline: 2px solid rgba(245,200,66,0.5);
+  outline-offset: -2px;
+  border-radius: 2px;
+}
 .faq-item.open .faq-question { color: var(--gold-light); }
 
 .faq-icon {
@@ -83,22 +88,32 @@
   font-size: 1.1rem;
   color: var(--gold);
   flex-shrink: 0;
-  transition: all 0.3s;
+  transition: background 0.3s, border-color 0.3s;
   line-height: 1;
+  user-select: none;
 }
 .faq-item.open .faq-icon {
   background: rgba(245,200,66,0.1);
   border-color: var(--gold);
 }
 
+/* Use CSS animation rather than max-height hack — more reliable with hidden attr */
 .faq-answer {
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
+  max-height: 0;
+}
+/* Override [hidden] to allow transition */
+.faq-answer[hidden] {
+  display: block;
+  max-height: 0;
+  padding-bottom: 0;
+  visibility: hidden;
 }
 .faq-item.open .faq-answer {
-  max-height: 200px;
+  max-height: 300px;
   padding-bottom: 1.4rem;
+  visibility: visible;
 }
 .faq-answer p {
   padding: 0 1.2rem;

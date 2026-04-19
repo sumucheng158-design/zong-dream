@@ -21,22 +21,33 @@
   background: rgba(245,200,66,0.03);
   overflow: hidden;
 }
+.fcb-content {
+  position: relative;
+  z-index: 1;
+}
 .fcb-glow {
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(245,200,66,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
+
+/* SVG lanterns */
 .fcb-lanterns {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  align-items: flex-end;
+  gap: 1.2rem;
   margin-bottom: 1.5rem;
 }
-.fcb-lantern {
-  font-size: 1.5rem;
+.svg-lantern {
+  width: 28px;
+  height: 46px;
   animation: lanternSway 2.5s ease-in-out infinite;
+  will-change: transform;
+  filter: drop-shadow(0 0 6px rgba(232, 148, 26, 0.5));
 }
+
 .fcb-title {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 3rem);
@@ -64,12 +75,46 @@
 .fcb-cta {
   font-size: 1.05rem !important;
   padding: 1rem 2.5rem !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
 }
+.fcb-cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+/* Button icons */
+.footer-btn-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+.footer-deco-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.2rem;
+  flex-shrink: 0;
+}
+
 .fcb-deadline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   font-size: 0.8rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
 }
+.fcb-clock {
+  width: 1rem;
+  height: 1rem;
+  color: var(--gold-dim);
+  display: inline-flex;
+}
+.fcb-clock svg { width: 100%; height: 100%; }
 
 /* Footer Bottom */
 .footer-bottom {
@@ -137,13 +182,18 @@
   transition: color 0.25s;
 }
 .footer-col li a:hover { color: var(--gold); }
+.footer-col li a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+  color: var(--gold);
+}
 
 .footer-divider {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
   height: 1px;
   background: rgba(255,255,255,0.06);
-  margin-bottom: 1.5rem;
 }
 .footer-copyright {
   max-width: 1200px;
@@ -155,6 +205,19 @@
   color: var(--text-muted);
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+/* Heart icon in copyright */
+.footer-made {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.footer-heart {
+  width: 0.95rem;
+  height: 0.85rem;
+  display: inline-flex;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {

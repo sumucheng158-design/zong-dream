@@ -54,13 +54,18 @@
   padding: 0.45rem 1.2rem;
   border-radius: 2px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
   letter-spacing: 0.08em;
 }
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover,
+.filter-btn.active {
   background: rgba(245, 200, 66, 0.1);
   border-color: var(--gold);
   color: var(--gold);
+}
+.filter-btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 .zongzi-grid {
@@ -75,30 +80,29 @@
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 6px;
   padding: 2rem 1.5rem;
-  transition: all 0.4s ease;
+  transition: border-color 0.4s ease, background 0.4s ease, transform 0.4s ease;
   overflow: hidden;
   cursor: default;
+  will-change: transform;
 }
 .zongzi-card:hover {
-  border-color: var(--card-color, var(--gold));
-  transform: translateY(-6px);
+  border-color: rgba(var(--card-color, 245,200,66), 0.35);
   background: rgba(255,255,255,0.04);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  transform: translateY(-4px);
 }
-.card-glow {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-.zongzi-card:hover .card-glow { opacity: 1; }
 
-.zongzi-emoji {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+/* SVG badge replacing emoji */
+.zongzi-badge {
   display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1rem;
 }
+.zongzi-badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
 .zongzi-tag {
   display: inline-block;
   font-size: 0.65rem;
@@ -158,6 +162,15 @@
   border-radius: 2px;
   color: var(--text-secondary);
 }
+
+.card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.zongzi-card:hover .card-glow { opacity: 1; }
 
 @media (max-width: 900px) {
   .zongzi { padding: 5rem 1.5rem; }

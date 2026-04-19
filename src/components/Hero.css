@@ -234,6 +234,14 @@
   background: var(--border-gold);
 }
 
+/* Hero CTA button SVG icon */
+.hero-btn-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
 /* Scroll hint */
 .hero-scroll-hint {
   position: absolute;

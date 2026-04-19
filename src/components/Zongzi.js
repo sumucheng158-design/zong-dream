@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
 import './Zongzi.css';
 
+// Each zongzi gets a decorative SVG badge instead of emoji
+// The badge shows the color accent + a character or shape
+const ZongziBadge = ({ color, symbol }) => (
+  <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="zongzi-badge-svg">
+    {/* Diamond-ish zongzi silhouette */}
+    <path
+      d="M28 6 L48 22 L42 46 L14 46 L8 22 Z"
+      fill={color}
+      opacity="0.18"
+    />
+    <path
+      d="M28 6 L48 22 L42 46 L14 46 L8 22 Z"
+      stroke={color}
+      strokeWidth="1.5"
+      fill="none"
+      opacity="0.6"
+    />
+    {/* Leaf wrap line */}
+    <path d="M18 16 Q28 12 38 16" stroke={color} strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+    {/* Center symbol text rendered via foreignObject-safe approach: use circle + text positioning */}
+    <text
+      x="28" y="33"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fontSize="14"
+      fontWeight="700"
+      fill={color}
+      opacity="0.9"
+      fontFamily="'Noto Serif TC', serif"
+    >{symbol}</text>
+  </svg>
+);
+
 const zongziTypes = [
   {
-    id: 1,
-    emoji: '🎋',
+    id: 'classic-south',
+    badge: <ZongziBadge color="#c9a227" symbol="傳" />,
     name: '南部傳統粽',
     type: 'classic',
     tag: '經典傳承',
@@ -13,8 +46,8 @@ const zongziTypes = [
     ingredients: ['長糯米', '三層豬肉', '滷蛋黃', '蝦米', '香菇', '月桂葉'],
   },
   {
-    id: 2,
-    emoji: '🌶️',
+    id: 'spicy',
+    badge: <ZongziBadge color="#c0392b" symbol="辣" />,
     name: '麻辣鮮肉粽',
     type: 'creative',
     tag: '創意新潮',
@@ -23,8 +56,8 @@ const zongziTypes = [
     ingredients: ['糯米', '麻辣豬肉', '花椒', '辣豆瓣', '花生', '竹葉'],
   },
   {
-    id: 3,
-    emoji: '🌿',
+    id: 'veg',
+    badge: <ZongziBadge color="#27ae60" symbol="素" />,
     name: '素食香菇粽',
     type: 'classic',
     tag: '清淡養生',
@@ -33,8 +66,8 @@ const zongziTypes = [
     ingredients: ['長糯米', '乾香菇', '芋頭', '花生', '醬油', '月桂葉'],
   },
   {
-    id: 4,
-    emoji: '🫐',
+    id: 'purple',
+    badge: <ZongziBadge color="#8e44ad" symbol="甜" />,
     name: '紫米甜粽',
     type: 'creative',
     tag: '甜蜜驚喜',
@@ -43,8 +76,8 @@ const zongziTypes = [
     ingredients: ['紫米', '紅豆', '桂花蜜', '黑糖', '桂葉', '棉繩'],
   },
   {
-    id: 5,
-    emoji: '🧀',
+    id: 'cheese',
+    badge: <ZongziBadge color="#e67e22" symbol="創" />,
     name: '起司培根粽',
     type: 'creative',
     tag: '台灣限定',
@@ -53,8 +86,8 @@ const zongziTypes = [
     ingredients: ['糯米', '培根', '馬茲瑞拉起司', '玉米粒', '黑胡椒', '竹葉'],
   },
   {
-    id: 6,
-    emoji: '🌸',
+    id: 'lotus',
+    badge: <ZongziBadge color="#c0748a" symbol="精" />,
     name: '蓮子蛋黃粽',
     type: 'classic',
     tag: '細膩精緻',
@@ -62,6 +95,12 @@ const zongziTypes = [
     desc: '清甜蓮子搭配鹹香蛋黃，一鹹一甜的完美平衡。這是最適合在夢幻燈光下品嚐的粽子。',
     ingredients: ['糯米', '蓮子', '鹹蛋黃', '豬油', '醬油', '月桂葉'],
   },
+];
+
+const filters = [
+  { key: 'all', label: '全部' },
+  { key: 'classic', label: '經典傳統' },
+  { key: 'creative', label: '創意特調' },
 ];
 
 export default function Zongzi() {
@@ -76,19 +115,22 @@ export default function Zongzi() {
 
       <div className="zongzi-container">
         <div className="zongzi-header fade-up">
-          <div className="section-label">✦ Zongzi Collection</div>
+          <div className="section-label">
+            <span aria-hidden="true">✦</span> Zongzi Collection
+          </div>
           <h2 className="section-title zongzi-title">
             粽子展示館
           </h2>
           <p className="zongzi-sub">傳統與創意的碰撞，每一顆粽子都是一個故事</p>
 
-          <div className="zongzi-filter">
-            {[
-              { key: 'all', label: '全部' },
-              { key: 'classic', label: '經典傳統' },
-              { key: 'creative', label: '創意特調' },
-            ].map(f => (
-              <button key={f.key} className={`filter-btn ${filter === f.key ? 'active' : ''}`} onClick={() => setFilter(f.key)}>
+          <div className="zongzi-filter" role="group" aria-label="篩選粽子類型">
+            {filters.map(f => (
+              <button
+                key={f.key}
+                className={`filter-btn ${filter === f.key ? 'active' : ''}`}
+                onClick={() => setFilter(f.key)}
+                aria-pressed={filter === f.key}
+              >
                 {f.label}
               </button>
             ))}
@@ -104,7 +146,7 @@ export default function Zongzi() {
               onMouseLeave={() => setHovered(null)}
               style={{ '--card-color': z.color }}
             >
-              <div className="zongzi-emoji">{z.emoji}</div>
+              <div className="zongzi-badge" aria-hidden="true">{z.badge}</div>
               <div className={`zongzi-tag tag-${z.type}`}>{z.tag}</div>
               <h3 className="zongzi-name">{z.name}</h3>
               <p className="zongzi-desc">{z.desc}</p>

@@ -71,7 +71,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 1;
-  transition: all 0.3s;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .process-step:hover .step-number {
   background: rgba(245,200,66,0.15);
@@ -85,18 +85,29 @@
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 4px;
   padding: 1.5rem;
-  transition: all 0.35s;
+  transition: border-color 0.35s, background 0.35s, transform 0.35s;
   width: 100%;
+  will-change: transform;
 }
 .process-step:hover .step-card {
   border-color: rgba(245,200,66,0.2);
   background: rgba(245,200,66,0.04);
   transform: translateY(-4px);
 }
+
+/* SVG icon */
 .step-icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.75rem;
+  color: var(--gold);
+  opacity: 0.85;
 }
+.step-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 .step-card h3 {
   font-family: var(--font-serif);
   font-size: 1rem;
