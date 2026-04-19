@@ -70,12 +70,12 @@ const IconSparkle = () => (
 
 // Accent colors for each gallery tile
 const galleryItems = [
-  { id: 'lantern', icon: <IconLantern />, label: '燈籠長廊', desc: '數百盞手工燈籠排列成長廊，走進去就像走進一場夢', aspect: 'tall', accent: 'rgba(240,112,48,0.18)', border: 'rgba(240,112,48,0.35)' },
-  { id: 'bamboo', icon: <IconBamboo />, label: '竹影包粽區', desc: '老師傅現場示範，新手也能包出完美粽子', aspect: 'wide', accent: 'rgba(80,180,80,0.12)', border: 'rgba(80,180,80,0.3)' },
-  { id: 'moon', icon: <IconMoon />, label: '夜市全景', desc: '入夜後的會場，光影交錯，美得像一幅畫', aspect: 'normal', accent: 'rgba(100,120,220,0.12)', border: 'rgba(100,120,220,0.3)' },
-  { id: 'pot', icon: <IconPot />, label: '蒸粽現場', desc: '熱氣蒸騰，粽香四溢，這是端午節最美的煙火', aspect: 'normal', accent: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.3)' },
-  { id: 'firework', icon: <IconFirework />, label: '燈火晚會', desc: '活動尾聲的燈火儀式，願望隨燈光升向夜空', aspect: 'wide', accent: 'rgba(220,80,160,0.12)', border: 'rgba(220,80,160,0.3)' },
-  { id: 'sparkle', icon: <IconSparkle />, label: '市集攤位', desc: '精心佈置的夜市攤位，每個角落都是拍照亮點', aspect: 'tall', accent: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.25)' },
+  { id: 'lantern', icon: <IconLantern />, image:'/images/gallery/latern.jpg' , label: '燈籠長廊', desc: '數百盞手工燈籠排列成長廊，走進去就像走進一場夢', aspect: 'tall', accent: 'rgba(240,112,48,0.18)', border: 'rgba(240,112,48,0.35)' },
+  { id: 'bamboo', icon: <IconBamboo />, image: '/images/gallery/leaf.jpg', label: '竹影包粽區', desc: '老師傅現場示範，新手也能包出完美粽子', aspect: 'wide', accent: 'rgba(80,180,80,0.12)', border: 'rgba(80,180,80,0.3)' },
+  { id: 'moon', icon: <IconMoon />, image: '/images/gallery/nightmarket.jpg', label: '夜市全景', desc: '入夜後的會場，光影交錯，美得像一幅畫', aspect: 'normal', accent: 'rgba(100,120,220,0.12)', border: 'rgba(100,120,220,0.3)' },
+  { id: 'pot', icon: <IconPot />, image: '/images/gallery/bamboo.jpg', label: '蒸粽現場', desc: '熱氣蒸騰，粽香四溢，這是端午節最美的煙火', aspect: 'normal', accent: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.3)' },
+  { id: 'firework', icon: <IconFirework />, image: '/images/gallery/sparkle.jpg', label: '燈火晚會', desc: '活動尾聲的燈火儀式，願望隨燈光升向夜空', aspect: 'wide', accent: 'rgba(220,80,160,0.12)', border: 'rgba(220,80,160,0.3)' },
+  { id: 'sparkle', icon: <IconSparkle />, image: '/images/gallery/market.jpg', label: '市集攤位', desc: '精心佈置的夜市攤位，每個角落都是拍照亮點', aspect: 'tall', accent: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.25)' },
 ];
 
 // SVG camera icon for the note
