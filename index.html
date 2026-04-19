@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>粽夏夜 ZONG DREAM — 端午節最夢幻的包粽夜市體驗</title>
+<meta name="description" content="粽夏夜之夢 Zong Dream Festival — 端午節最夢幻的包粽夜市體驗，立即報名包粽夥伴"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--black:#05050a;--deep-navy:#080c1a;--dark-blue:#0d1428;--gold:#f5c842;--gold-light:#ffd966;--gold-dim:#c9a227;--amber:#e8941a;--orange:#f07030;--warm-white:#fdf6e3;--cream:#f5e6c8;--text-primary:#fdf0d5;--text-secondary:#b89a6a;--text-muted:#6b5c40;--border-gold:rgba(245,200,66,0.2);--font-serif:'Noto Serif TC',serif;--font-display:'Cinzel Decorative','Noto Serif TC',serif;--font-body:'Noto Sans TC',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text-primary);font-family:var(--font-body);overflow-x:hidden;line-height:1.7}
+.fade-up{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.35s}.d4{transition-delay:.5s}.d5{transition-delay:.65s}
+.sec-label{font-family:var(--font-display);font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:.75rem}
+.sec-title{font-family:var(--font-serif);font-weight:900;line-height:1.2}
+.btn-p{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold) 0%,var(--amber) 100%);color:#0a0a00;font-family:var(--font-serif);font-weight:700;font-size:1rem;padding:.85rem 2rem;border-radius:3px;border:none;cursor:pointer;text-decoration:none;letter-spacing:.05em;transition:all .3s ease;box-shadow:0 4px 24px rgba(245,200,66,.35);position:relative;overflow:hidden}
+.btn-p::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#fff3 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(245,200,66,.55),0 0 0 4px rgba(245,200,66,.15)}
+.btn-p:hover::before{opacity:1}
+.btn-o{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:var(--gold);font-family:var(--font-serif);font-weight:600;font-size:.95rem;padding:.8rem 1.8rem;border-radius:3px;border:1.5px solid var(--gold-dim);cursor:pointer;text-decoration:none;letter-spacing:.05em;transition:all .3s ease}
+.btn-o:hover{background:rgba(245,200,66,.08);border-color:var(--gold);transform:translateY(-2px)}
+@keyframes lanternSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes lanternGlow{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes steamRise{0%{transform:translateY(0) scaleX(1);opacity:.4}50%{transform:translateY(-30px) scaleX(1.3);opacity:.2}100%{transform:translateY(-60px) scaleX(.8);opacity:0}}
+@keyframes particleDrift{0%{transform:translateY(0) translateX(0);opacity:1}100%{transform:translateY(-120px) translateX(20px);opacity:0}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes pulseGlow{0%,100%{box-shadow:0 4px 24px rgba(245,200,66,.3)}50%{box-shadow:0 4px 48px rgba(245,200,66,.6),0 0 80px rgba(245,200,66,.2)}}
+.pulse{animation:pulseGlow 2.5s ease-in-out infinite}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--black)}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px}
+::selection{background:rgba(245,200,66,.3);color:var(--warm-white)}
+
+/* ===== NAVBAR ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 3rem;transition:all .4s ease;gap:2rem}
+nav.scrolled{background:rgba(5,5,10,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(245,200,66,.12);padding:.85rem 3rem}
+.nav-logo img{height:48px;filter:drop-shadow(0 0 8px rgba(245,200,66,.4));transition:filter .3s,transform .3s}
+.nav-logo:hover img{filter:drop-shadow(0 0 16px rgba(245,200,66,.7));transform:scale(1.05)}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;flex:1;justify-content:center}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.9rem;letter-spacing:.08em;transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s ease}
+.nav-links a:hover{color:var(--gold)}.nav-links a:hover::after{width:100%}
+.nav-cta{font-size:.82rem!important;padding:.6rem 1.3rem!important;white-space:nowrap;flex-shrink:0}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:1001}
+.hamburger span{display:block;width:24px;height:2px;background:var(--gold);border-radius:2px;transition:all .3s ease;transform-origin:left center}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(1px,-2px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(1px,2px)}
+
+/* ===== HERO ===== */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:8rem 2rem 4rem}
+.h-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,#1a1020 0%,#0a0c18 40%,#05050a 100%);z-index:0}
+.h-glow{position:absolute;inset:0;background:radial-gradient(ellipse 50% 40% at 20% 80%,rgba(240,112,48,.12) 0%,transparent 60%),radial-gradient(ellipse 40% 35% at 80% 70%,rgba(232,148,26,.1) 0%,transparent 60%),radial-gradient(ellipse 60% 30% at 50% 50%,rgba(245,200,66,.06) 0%,transparent 70%);z-index:0}
+.lantern-str{position:absolute;left:-20px;right:-20px;display:flex;justify-content:space-around;align-items:flex-start;z-index:1}
+.lan-wrap{display:flex;flex-direction:column;align-items:center;animation:lanternSway 3s ease-in-out infinite}
+.lan-wrap::before{content:'';width:1px;height:20px;background:rgba(200,160,80,.4)}
+.lan{width:18px;height:26px;border-radius:50% 50% 40% 40%;position:relative;box-shadow:0 0 12px 4px rgba(240,112,48,.4);animation:lanternGlow 2s ease-in-out infinite}
+.lan-inner{position:absolute;inset:3px;background:rgba(255,220,120,.5);border-radius:50% 50% 40% 40%}
+.lan::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:2px;height:6px;background:rgba(200,150,60,.6)}
+.particle{position:absolute;border-radius:50%;background:var(--gold);opacity:0;animation:particleDrift linear infinite;box-shadow:0 0 4px 1px rgba(245,200,66,.5);z-index:1}
+.steam-g{position:absolute;bottom:0;left:0;right:0;z-index:1;pointer-events:none}
+.steam{position:absolute;bottom:0;width:30px;height:60px;background:radial-gradient(ellipse at center,rgba(255,255,255,.06) 0%,transparent 70%);border-radius:50%;animation:steamRise 3s ease-out infinite}
+.h-content{position:relative;z-index:2;text-align:center;max-width:720px;width:100%}
+.h-logo{width:120px;height:120px;object-fit:contain;filter:drop-shadow(0 0 24px rgba(245,200,66,.5));animation:float 4s ease-in-out infinite;margin-bottom:1.5rem}
+.h-tag{display:inline-flex;align-items:center;gap:.75rem;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.8;margin-bottom:1.2rem;border:1px solid rgba(245,200,66,.25);padding:.4rem 1.2rem;border-radius:2px}
+.h-title{font-family:var(--font-serif);font-weight:900;font-size:clamp(3.5rem,10vw,6.5rem);line-height:1.1;margin-bottom:1.5rem;background:linear-gradient(180deg,#fff8e0 0%,var(--gold-light) 40%,var(--amber) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 4px 32px rgba(245,200,66,.3))}
+.h-title-en{font-family:var(--font-display);font-size:clamp(1.2rem,3.5vw,2.2rem);font-weight:400;letter-spacing:.12em;display:block;margin:.4rem 0;background:linear-gradient(90deg,var(--amber) 0%,var(--gold-light) 50%,var(--amber) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+.h-sub{font-size:clamp(1rem,2.5vw,1.2rem);color:var(--cream);opacity:.75;margin-bottom:2.5rem;line-height:1.9;font-weight:300}
+.h-ctas{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:3.5rem}
+.h-ctas .btn-p{font-size:1.05rem!important;padding:1rem 2.4rem!important}
+.h-stats{display:flex;align-items:center;justify-content:center;gap:2.5rem;padding:1.2rem 2rem;border:1px solid var(--border-gold);border-radius:4px;background:rgba(245,200,66,.04);backdrop-filter:blur(10px)}
+.stat{display:flex;flex-direction:column;align-items:center;gap:.2rem}
+.stat-n{font-family:var(--font-serif);font-size:1.4rem;font-weight:700;color:var(--gold)}
+.stat-l{font-size:.7rem;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase}
+.stat-div{width:1px;height:36px;background:var(--border-gold)}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:2;font-size:.7rem;letter-spacing:.2em;color:var(--text-muted);text-transform:uppercase;animation:float 2.5s ease-in-out infinite}
+.scroll-arrow{width:20px;height:20px;border-right:1.5px solid var(--gold-dim);border-bottom:1.5px solid var(--gold-dim);transform:rotate(45deg);opacity:.5}
+
+/* ===== ABOUT ===== */
+#about{position:relative;padding:8rem 3rem;overflow:hidden}
+#about::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,var(--deep-navy) 50%,var(--black) 100%);z-index:0}
+.about-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.a-title{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--warm-white);margin-bottom:1.5rem}
+.a-title span{color:var(--gold)}
+.a-div{width:60px;height:2px;background:linear-gradient(90deg,var(--gold) 0%,transparent 100%);margin-bottom:1.8rem}
+.a-text{color:var(--text-secondary);font-size:1.05rem;line-height:1.9;margin-bottom:1.2rem;font-weight:300}
+.a-hl{color:var(--cream)!important;font-weight:400!important;border-left:2px solid var(--gold);padding-left:1rem}
+.a-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.a-card{background:rgba(255,255,255,.03);border:1px solid var(--border-gold);border-radius:4px;padding:1.5rem;transition:all .35s ease}
+.a-card:hover{background:rgba(245,200,66,.05);border-color:rgba(245,200,66,.4);transform:translateY(-4px)}
+.a-card-ico{font-size:1.8rem;margin-bottom:.8rem}
+.a-card h3{font-family:var(--font-serif);font-size:1rem;color:var(--gold-light);margin-bottom:.5rem;font-weight:600}
+.a-card p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+.origin{position:relative;z-index:1;max-width:1200px;margin:5rem auto 0;padding:2rem 3rem;border:1px solid var(--border-gold);border-radius:4px;background:linear-gradient(135deg,rgba(245,200,66,.04) 0%,transparent 100%)}
+.origin-in{display:flex;align-items:center;gap:2.5rem}
+.origin-yr{font-family:var(--font-display);font-size:1.5rem;color:var(--gold);white-space:nowrap;flex-shrink:0}
+.origin-ln{width:60px;height:1px;background:var(--gold-dim);flex-shrink:0}
+.origin-tx{font-size:.95rem;color:var(--text-secondary);font-style:italic;line-height:1.8}
+
+/* ===== ZONGZI ===== */
+#zongzi{position:relative;padding:8rem 3rem;overflow:hidden}
+#zongzi::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#0a0d1a 50%,var(--black) 100%);z-index:0}
+#zongzi::after{content:'';position:absolute;top:0;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),transparent)}
+.zz-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.zz-hdr{text-align:center;margin-bottom:3.5rem}
+.zz-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--warm-white);margin-bottom:.8rem}
+.zz-sub{color:var(--text-muted);font-size:1rem;margin-bottom:2rem}
+.zz-filters{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.f-btn{background:transparent;border:1px solid rgba(245,200,66,.2);color:var(--text-secondary);font-family:var(--font-body);font-size:.85rem;padding:.45rem 1.2rem;border-radius:2px;cursor:pointer;transition:all .25s ease;letter-spacing:.08em}
+.f-btn:hover,.f-btn.active{background:rgba(245,200,66,.1);border-color:var(--gold);color:var(--gold)}
+.zz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.zz-card{position:relative;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:2rem 1.5rem;transition:all .4s ease;overflow:hidden;cursor:default}
+.zz-card:hover{border-color:var(--zc,var(--gold));transform:translateY(-6px);background:rgba(255,255,255,.04);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.zz-emoji{font-size:2.5rem;margin-bottom:1rem;display:block}
+.zz-tag{display:inline-block;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;padding:.25rem .75rem;border-radius:2px;margin-bottom:.75rem}
+.tag-cl{background:rgba(139,115,85,.2);color:#c9a460;border:1px solid rgba(139,115,85,.4)}
+.tag-cr{background:rgba(240,112,48,.15);color:var(--amber);border:1px solid rgba(240,112,48,.35)}
+.zz-name{font-family:var(--font-serif);font-size:1.2rem;color:var(--warm-white);margin-bottom:.75rem;font-weight:700}
+.zz-desc{font-size:.88rem;color:var(--text-muted);line-height:1.75;margin-bottom:1rem}
+.zz-ings{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.zz-card:hover .zz-ings{max-height:100px}
+.ing-lbl{font-size:.72rem;color:var(--text-muted);letter-spacing:.1em;margin-bottom:.5rem}
+.ing-lst{display:flex;flex-wrap:wrap;gap:.4rem}
+.ing-t{font-size:.7rem;padding:.2rem .6rem;background:rgba(245,200,66,.07);border:1px solid rgba(245,200,66,.2);border-radius:2px;color:var(--text-secondary)}
+.cg{position:absolute;inset:0;opacity:0;transition:opacity .4s;pointer-events:none}
+.zz-card:hover .cg{opacity:1}
+
+/* ===== RECRUIT ===== */
+#recruit{position:relative;padding:8rem 3rem;overflow:hidden}
+#recruit::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#0c0e1f 40%,#09101e 70%,var(--black) 100%);z-index:0}
+.r-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.r-hdr{text-align:center;margin-bottom:3.5rem}
+.r-title{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--warm-white);margin-bottom:1rem}
+.r-sub{font-size:1.1rem;color:var(--text-secondary);line-height:1.9}
+.rhc{position:relative;border:1px solid rgba(245,200,66,.25);border-radius:8px;overflow:hidden;margin-bottom:4rem;background:rgba(245,200,66,.03)}
+.rhc-glow{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(245,200,66,.06) 0%,transparent 70%);pointer-events:none}
+.rhc-body{display:grid;grid-template-columns:1fr 320px}
+.rhc-left{padding:3rem 3.5rem;border-right:1px solid rgba(245,200,66,.12)}
+.rhc-badge{display:inline-block;background:linear-gradient(135deg,var(--orange),var(--amber));color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.3rem .9rem;border-radius:2px;margin-bottom:1rem}
+.rhc-title{font-family:var(--font-serif);font-size:1.8rem;color:var(--warm-white);margin-bottom:1rem;font-weight:700}
+.rhc-desc{color:var(--text-secondary);line-height:1.8;margin-bottom:1.5rem;font-size:1rem}
+.rhc-cl{list-style:none;margin-bottom:2rem}
+.rhc-cl li{font-size:.9rem;color:var(--cream);padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:center;gap:.5rem}
+.rhc-ctas{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.rhc-urg{font-size:.85rem;color:var(--text-muted)}
+.rhc-urg strong{color:var(--amber);font-size:1.1rem}
+.rhc-right{display:flex;align-items:center;justify-content:center;padding:2rem;background:rgba(245,200,66,.02)}
+.rhc-vis{position:relative;width:200px;height:200px;display:flex;align-items:center;justify-content:center}
+.rv-c{position:absolute;border-radius:50%;border:1px solid rgba(245,200,66,.15);animation:float 4s ease-in-out infinite}
+.rv-c1{width:200px;height:200px}
+.rv-c2{width:140px;height:140px;animation-delay:.5s;border-color:rgba(240,112,48,.2)}
+.rv-c3{width:80px;height:80px;animation-delay:1s;background:rgba(245,200,66,.05)}
+.rv-em{font-size:2.5rem;position:relative;z-index:2;animation:float 3s ease-in-out infinite}
+.rv-b{position:absolute;background:rgba(245,200,66,.12);border:1px solid rgba(245,200,66,.3);color:var(--gold);font-size:.7rem;font-weight:600;padding:.25rem .6rem;border-radius:2px;letter-spacing:.1em;animation:float 3.5s ease-in-out infinite}
+.rv-b1{top:10px;right:10px;animation-delay:.3s}
+.rv-b2{bottom:20px;left:10px;animation-delay:.8s}
+.rv-b3{bottom:10px;right:20px;animation-delay:1.3s}
+.perks-hdr{text-align:center;margin-bottom:2rem}
+.perks-hdr h3{font-family:var(--font-serif);font-size:1.5rem;color:var(--warm-white);margin-bottom:.4rem}
+.perks-hdr p{color:var(--text-muted);font-size:.9rem}
+.perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:4rem}
+.perk{display:flex;gap:1rem;align-items:flex-start;padding:1.4rem;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:4px;transition:all .3s ease}
+.perk:hover{border-color:rgba(245,200,66,.25);background:rgba(245,200,66,.04);transform:translateY(-3px)}
+.perk-ico{font-size:1.8rem;flex-shrink:0}
+.perk h4{font-family:var(--font-serif);font-size:.95rem;color:var(--gold-light);margin-bottom:.4rem;font-weight:600}
+.perk p{font-size:.82rem;color:var(--text-muted);line-height:1.65}
+.r-bot-cta{text-align:center;padding:3rem;border:1px solid var(--border-gold);border-radius:6px;background:linear-gradient(135deg,rgba(245,200,66,.04),transparent)}
+.r-bot-cta p{font-family:var(--font-serif);font-size:1.1rem;color:var(--cream);margin-bottom:1.5rem}
+
+/* ===== PROCESS ===== */
+#process{position:relative;padding:8rem 3rem;overflow:hidden}
+#process::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#0b0e1e 50%,var(--black) 100%);z-index:0}
+.proc-inner{position:relative;z-index:1;max-width:1100px;margin:0 auto}
+.proc-hdr{text-align:center;margin-bottom:4rem}
+.proc-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--warm-white);margin-bottom:.75rem}
+.proc-sub{color:var(--text-muted);font-size:1rem}
+.proc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.proc-step{display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.2rem}
+.step-num{width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(245,200,66,.4);background:rgba(245,200,66,.06);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:.75rem;color:var(--gold);letter-spacing:.1em;flex-shrink:0;position:relative;z-index:1;transition:all .3s}
+.proc-step:hover .step-num{background:rgba(245,200,66,.15);border-color:var(--gold);box-shadow:0 0 20px rgba(245,200,66,.25)}
+.step-card{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:4px;padding:1.5rem;transition:all .35s;width:100%}
+.proc-step:hover .step-card{border-color:rgba(245,200,66,.2);background:rgba(245,200,66,.04);transform:translateY(-4px)}
+.step-ico{font-size:1.8rem;margin-bottom:.75rem}
+.step-card h3{font-family:var(--font-serif);font-size:1rem;color:var(--gold-light);margin-bottom:.5rem;font-weight:600}
+.step-card p{font-size:.85rem;color:var(--text-muted);line-height:1.7}
+
+/* ===== GALLERY ===== */
+#gallery{position:relative;padding:8rem 3rem;overflow:hidden}
+#gallery::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#080b16 50%,var(--black) 100%);z-index:0}
+.gal-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+.gal-hdr{text-align:center;margin-bottom:3.5rem}
+.gal-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--warm-white);margin-bottom:.75rem}
+.gal-sub{color:var(--text-muted);font-size:1rem}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.gi{cursor:pointer;border-radius:4px;overflow:hidden;transition:transform .35s ease}
+.gi:hover{transform:scale(1.02);z-index:2}
+.gi-tall{grid-row:span 2}
+.gi-wide{grid-column:span 2}
+.gi-ph{position:relative;width:100%;min-height:200px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:all .35s ease}
+.gi-tall .gi-ph{min-height:420px}
+.gi:hover .gi-ph{background:rgba(245,200,66,.04);border-color:rgba(245,200,66,.25)}
+.gi-em{font-size:4rem;opacity:.5;transition:all .35s ease}
+.gi:hover .gi-em{opacity:.8;transform:scale(1.15)}
+.gi-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,5,10,.9) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;opacity:0;transition:opacity .35s ease}
+.gi:hover .gi-ov{opacity:1}
+.gi-lbl{font-family:var(--font-serif);font-size:.95rem;color:var(--gold-light);font-weight:600;margin-bottom:.3rem}
+.gi-dsc{font-size:.78rem;color:var(--text-secondary);line-height:1.5}
+.gal-note{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.8rem;background:rgba(245,200,66,.04);border:1px solid var(--border-gold);border-radius:4px;font-size:.9rem;color:var(--text-secondary)}
+.gal-note span{font-size:1.3rem}
+
+/* ===== FAQ ===== */
+#faq{position:relative;padding:8rem 3rem;overflow:hidden}
+#faq::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#090c1a 50%,var(--black) 100%);z-index:0}
+.faq-inner{position:relative;z-index:1;max-width:800px;margin:0 auto}
+.faq-hdr{text-align:center;margin-bottom:3.5rem}
+.faq-title{font-size:clamp(2rem,5vw,3.2rem);color:var(--warm-white);margin-bottom:.75rem}
+.faq-sub{color:var(--text-muted);font-size:1rem}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);transition:background .3s}
+.faq-item:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.faq-item.open{background:rgba(245,200,66,.03)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 1.2rem;background:none;border:none;cursor:pointer;text-align:left;color:var(--cream);font-family:var(--font-body);font-size:.98rem;line-height:1.6;transition:color .25s}
+.faq-q:hover,.faq-item.open .faq-q{color:var(--gold-light)}
+.faq-ico{width:28px;height:28px;border-radius:50%;border:1px solid rgba(245,200,66,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);flex-shrink:0;transition:all .3s;line-height:1}
+.faq-item.open .faq-ico{background:rgba(245,200,66,.1);border-color:var(--gold)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.4rem}
+.faq-a p{padding:0 1.2rem;font-size:.9rem;color:var(--text-secondary);line-height:1.85}
+
+/* ===== FOOTER ===== */
+footer{position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,var(--black) 0%,#06070f 100%);z-index:0}
+.ft-cta{position:relative;z-index:1;margin:0 3rem;padding:5rem 3rem;border:1px solid rgba(245,200,66,.2);border-radius:8px;text-align:center;background:rgba(245,200,66,.03);overflow:hidden}
+.ft-cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 50%,rgba(245,200,66,.06) 0%,transparent 70%);pointer-events:none}
+.ft-lans{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.5rem}
+.ft-lan{font-size:1.5rem;animation:lanternSway 2.5s ease-in-out infinite}
+.ft-cta-title{font-family:var(--font-serif);font-size:clamp(2rem,5vw,3rem);font-weight:900;margin-bottom:1rem;background:linear-gradient(180deg,#fff8e0 0%,var(--gold-light) 60%,var(--amber) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ft-cta-sub{font-size:1.05rem;color:var(--text-secondary);margin-bottom:2.5rem}
+.ft-cta-btns{display:flex;gap:1rem;justify-content:center;align-items:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.ft-cta-btns .btn-p{font-size:1.05rem!important;padding:1rem 2.5rem!important}
+.ft-dl{font-size:.8rem;color:var(--text-muted);letter-spacing:.1em}
+.ft-bot{position:relative;z-index:1;padding:4rem 3rem 2rem}
+.ft-bot-in{max-width:1200px;margin:0 auto;display:flex;gap:4rem;align-items:flex-start;justify-content:space-between;margin-bottom:2.5rem}
+.ft-logo-a{display:flex;align-items:center;gap:1rem}
+.ft-logo{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(245,200,66,.3))}
+.ft-brand{font-family:var(--font-serif);font-size:1rem;color:var(--gold);font-weight:700;margin-bottom:.25rem}
+.ft-tag{font-size:.78rem;color:var(--text-muted)}
+.ft-links{display:flex;gap:4rem}
+.ft-col h4{font-family:var(--font-serif);font-size:.8rem;color:var(--gold);letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem;font-weight:600}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.ft-col li a,.ft-col li span{font-size:.85rem;color:var(--text-muted);text-decoration:none;transition:color .25s}
+.ft-col li a:hover{color:var(--gold)}
+.ft-div{max-width:1200px;margin:0 auto 1.5rem;height:1px;background:rgba(255,255,255,.06)}
+.ft-copy{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--text-muted);flex-wrap:wrap;gap:.5rem}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  nav.scrolled{padding:.75rem 1.5rem}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:-100%;height:100vh;width:280px;background:rgba(8,12,26,.98);backdrop-filter:blur(20px);flex-direction:column;justify-content:center;gap:2.5rem;border-left:1px solid var(--border-gold);transition:right .4s ease;padding:2rem}
+  .nav-links.open{right:0}
+  .nav-links a{font-size:1.1rem}
+  .nav-cta{display:none}
+  #about{padding:5rem 1.5rem}.about-inner{grid-template-columns:1fr;gap:3rem}
+  .origin-in{flex-direction:column;align-items:flex-start;gap:1rem}.origin-ln{width:40px}
+  #zongzi{padding:5rem 1.5rem}.zz-grid{grid-template-columns:1fr 1fr}
+  #recruit{padding:5rem 1.5rem}
+  .rhc-body{grid-template-columns:1fr}
+  .rhc-right{display:none}
+  .rhc-left{padding:2rem;border-right:none}
+  .perks-grid{grid-template-columns:1fr 1fr}
+  #process{padding:5rem 1.5rem}.proc-grid{grid-template-columns:1fr 1fr}
+  #gallery{padding:5rem 1.5rem}.gal-grid{grid-template-columns:1fr 1fr}.gi-tall{grid-row:span 1}.gi-tall .gi-ph{min-height:200px}
+  #faq{padding:5rem 1.5rem}
+  .ft-cta{margin:0 1.5rem;padding:3.5rem 1.5rem}
+  .ft-bot{padding:3rem 1.5rem 2rem}
+  .ft-bot-in{flex-direction:column;gap:2.5rem}
+  .ft-links{gap:2rem}
+}
+@media(max-width:580px){
+  #hero{padding:7rem 1.5rem 5rem}
+  .h-logo{width:90px;height:90px}
+  .h-stats{gap:1.5rem;padding:1rem 1.5rem}
+  .stat-n{font-size:1.1rem}
+  .h-ctas{flex-direction:column}.h-ctas .btn-p,.h-ctas .btn-o{width:100%;justify-content:center}
+  .a-cards{grid-template-columns:1fr}
+  .zz-grid{grid-template-columns:1fr}
+  .rhc-ctas{flex-direction:column;align-items:flex-start}
+  .perks-grid{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr}.gi-wide{grid-column:span 1}
+  .ft-cta-btns{flex-direction:column}.ft-cta-btns .btn-p,.ft-cta-btns .btn-o{width:100%;justify-content:center}
+  .ft-links{flex-direction:column;gap:1.5rem}
+  .ft-copy{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">
+    <img src="logo.png" alt="粽夏夜 ZONG DREAM" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=&quot;font-family:var(--font-serif);color:var(--gold);font-size:1.1rem;font-weight:700;&quot;>粽夏夜</span>'"/>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" onclick="closeMenu()">活動介紹</a></li>
+    <li><a href="#zongzi" onclick="closeMenu()">粽子展示</a></li>
+    <li><a href="#recruit" onclick="closeMenu()">招募夥伴</a></li>
+    <li><a href="#process" onclick="closeMenu()">參與流程</a></li>
+    <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
+  </ul>
+  <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-p nav-cta pulse">立即報名包粽夥伴 ✦</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="選單">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="h-bg"></div>
+  <div class="h-glow"></div>
+  <!-- Lanterns -->
+  <div class="lantern-str" style="top:0%">
+    <div class="lan-wrap" style="animation-delay:0s"><div class="lan" style="background:#f07030"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:.3s"><div class="lan" style="background:#e8941a"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:.6s"><div class="lan" style="background:#f07030"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:.9s"><div class="lan" style="background:#e8941a"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:1.2s"><div class="lan" style="background:#f07030"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:1.5s"><div class="lan" style="background:#e8941a"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:1.8s"><div class="lan" style="background:#f07030"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:2.1s"><div class="lan" style="background:#e8941a"><div class="lan-inner"></div></div></div>
+    <div class="lan-wrap" style="animation-delay:2.4s"><div class="lan" style="background:#f07030"><div class="lan-inner"></div></div></div>
+  </div>
+  <div class="steam-g">
+    <div class="steam" style="animation-delay:0s;left:47%"></div>
+    <div class="steam" style="animation-delay:.8s;left:50%"></div>
+    <div class="steam" style="animation-delay:1.6s;left:53%"></div>
+  </div>
+  <div class="h-content">
+    <img src="logo.png" alt="粽夏夜 ZONG DREAM" class="h-logo" onerror="this.style.fontSize='4rem';this.outerHTML='<div style=&quot;font-size:4rem;margin-bottom:1.5rem;animation:float 4s ease-in-out infinite&quot;>🎋</div>'"/>
+    <div class="h-tag fade-up visible d1"><span>✦</span> 2025 端午節限定 <span>✦</span></div>
+    <h1 class="h-title fade-up visible d2">
+      粽夏夜<br>
+      <span class="h-title-en">ZONG DREAM</span><br>
+      之夢
+    </h1>
+    <p class="h-sub fade-up visible d3">當夜市燈火搖曳，當粽香飄散夜空<br>你是否也曾夢見，那個最美的端午夜晚？</p>
+    <div class="h-ctas fade-up visible d4">
+      <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-p pulse">🎋 立即報名包粽夥伴</a>
+      <a href="#about" class="btn-o">了解活動 ↓</a>
+    </div>
+    <div class="h-stats fade-up visible d5">
+      <div class="stat"><span class="stat-n">6.29</span><span class="stat-l">活動日期</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n">夜市</span><span class="stat-l">沉浸式場景</span></div>
+      <div class="stat-div"></div>
+      <div class="stat"><span class="stat-n">∞</span><span class="stat-l">粽子種類</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>向下探索</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-left fade-up">
+      <div class="sec-label">✦ About The Festival</div>
+      <h2 class="sec-title a-title">粽夏夜之夢<br><span>是什麼？</span></h2>
+      <div class="a-div"></div>
+      <p class="a-text">端午節不只是吃粽子的節日——它是一個關於傳承、創造、與人相聚的夏夜儀式。</p>
+      <p class="a-text">「粽夏夜之夢」是一場沉浸式夜市體驗，我們把端午節的靈魂打包成一個充滿燈火、香氣、笑聲的夢幻空間。你可以動手包粽子、品嚐傳統與創意的碰撞，在暖黃燈光下感受最真實的台灣味。</p>
+      <p class="a-text a-hl">📍 不只是活動，是一個你會記得一輩子的端午夢。</p>
+    </div>
+    <div class="about-right fade-up d2">
+      <div class="a-cards">
+        <div class="a-card"><div class="a-card-ico">🎋</div><h3>端午文化</h3><p>探索屈原傳說、龍舟文化、香包習俗，重新認識這個古老節日的靈魂。</p></div>
+        <div class="a-card"><div class="a-card-ico">🕯️</div><h3>夜市氛圍</h3><p>燈串閃爍、蒸氣飄香，整個空間就是一幅會呼吸的端午畫卷。</p></div>
+        <div class="a-card"><div class="a-card-ico">🫘</div><h3>親手包粽</h3><p>不需要任何經驗，在老師傅的帶領下，包出一顆屬於你的粽子故事。</p></div>
+        <div class="a-card"><div class="a-card-ico">✨</div><h3>夢幻體驗</h3><p>精心設計的光影場景，讓每一個瞬間都值得被記錄、被珍藏。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="origin fade-up">
+    <div class="origin-in">
+      <div class="origin-yr">西元前 278</div>
+      <div class="origin-ln"></div>
+      <div class="origin-tx">屈原投江，百姓以粽葉包米投入江中，既是祭祀也是守護。兩千年後的今天，我們用同樣的粽葉，包入對這個時代的愛與期待。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONGZI -->
+<section id="zongzi">
+  <div class="zz-inner">
+    <div class="zz-hdr fade-up">
+      <div class="sec-label">✦ Zongzi Collection</div>
+      <h2 class="sec-title zz-title">粽子展示館</h2>
+      <p class="zz-sub">傳統與創意的碰撞，每一顆粽子都是一個故事</p>
+      <div class="zz-filters">
+        <button class="f-btn active" onclick="filterZz('all',this)">全部</button>
+        <button class="f-btn" onclick="filterZz('cl',this)">經典傳統</button>
+        <button class="f-btn" onclick="filterZz('cr',this)">創意特調</button>
+      </div>
+    </div>
+    <div class="zz-grid" id="zzGrid">
+      <div class="zz-card fade-up d1" data-type="cl" style="--zc:#8B7355"><span class="zz-emoji">🎋</span><div class="zz-tag tag-cl">經典傳承</div><h3 class="zz-name">南部傳統粽</h3><p class="zz-desc">用月桂葉包裹糯米、豬肉、花生和蛋黃。每一口都是幾十年的記憶，是阿嬤的手藝，是家的味道。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">長糯米</span><span class="ing-t">三層豬肉</span><span class="ing-t">滷蛋黃</span><span class="ing-t">蝦米</span><span class="ing-t">香菇</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#8B735522 0%,transparent 70%)"></div></div>
+      <div class="zz-card fade-up d2" data-type="cr" style="--zc:#c0392b"><span class="zz-emoji">🌶️</span><div class="zz-tag tag-cr">創意新潮</div><h3 class="zz-name">麻辣鮮肉粽</h3><p class="zz-desc">融合四川麻辣的火爆個性，與傳統粽子的溫婉包容。一口咬下，是南北交融的味覺革命。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">糯米</span><span class="ing-t">麻辣豬肉</span><span class="ing-t">花椒</span><span class="ing-t">辣豆瓣</span><span class="ing-t">花生</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#c0392b22 0%,transparent 70%)"></div></div>
+      <div class="zz-card fade-up d3" data-type="cl" style="--zc:#27ae60"><span class="zz-emoji">🌿</span><div class="zz-tag tag-cl">清淡養生</div><h3 class="zz-name">素食香菇粽</h3><p class="zz-desc">獻給追求清淡的你。以香菇、芋頭、花生為主角，用最簡單的食材，堆疊出最深層的鮮味。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">長糯米</span><span class="ing-t">乾香菇</span><span class="ing-t">芋頭</span><span class="ing-t">花生</span><span class="ing-t">醬油</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#27ae6022 0%,transparent 70%)"></div></div>
+      <div class="zz-card fade-up d1" data-type="cr" style="--zc:#8e44ad"><span class="zz-emoji">🫐</span><div class="zz-tag tag-cr">甜蜜驚喜</div><h3 class="zz-name">紫米甜粽</h3><p class="zz-desc">紫米與紅豆的夢幻組合，淋上一勺桂花蜜，甜而不膩。送給所有愛甜食的靈魂。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">紫米</span><span class="ing-t">紅豆</span><span class="ing-t">桂花蜜</span><span class="ing-t">黑糖</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#8e44ad22 0%,transparent 70%)"></div></div>
+      <div class="zz-card fade-up d2" data-type="cr" style="--zc:#e67e22"><span class="zz-emoji">🧀</span><div class="zz-tag tag-cr">台灣限定</div><h3 class="zz-name">起司培根粽</h3><p class="zz-desc">大膽的跨界實驗！融合義式起司與美式培根，用竹葉包裹一個屬於這個時代的創意宣言。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">糯米</span><span class="ing-t">培根</span><span class="ing-t">起司</span><span class="ing-t">玉米粒</span><span class="ing-t">黑胡椒</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#e67e2222 0%,transparent 70%)"></div></div>
+      <div class="zz-card fade-up d3" data-type="cl" style="--zc:#c0748a"><span class="zz-emoji">🌸</span><div class="zz-tag tag-cl">細膩精緻</div><h3 class="zz-name">蓮子蛋黃粽</h3><p class="zz-desc">清甜蓮子搭配鹹香蛋黃，一鹹一甜的完美平衡。這是最適合在夢幻燈光下品嚐的粽子。</p><div class="zz-ings"><div class="ing-lbl">食材：</div><div class="ing-lst"><span class="ing-t">糯米</span><span class="ing-t">蓮子</span><span class="ing-t">鹹蛋黃</span><span class="ing-t">豬油</span></div></div><div class="cg" style="background:radial-gradient(circle at 50% 50%,#c0748a22 0%,transparent 70%)"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUIT -->
+<section id="recruit">
+  <div class="r-inner">
+    <div class="r-hdr fade-up">
+      <div class="sec-label">✦ Join The Dream</div>
+      <h2 class="sec-title r-title">招募包粽夥伴</h2>
+      <p class="r-sub">我們需要你——那個願意在端午夜市，<br>用雙手創造溫度的人。</p>
+    </div>
+    <div class="rhc fade-up d2">
+      <div class="rhc-glow"></div>
+      <div class="rhc-body">
+        <div class="rhc-left">
+          <div class="rhc-badge">名額有限</div>
+          <h3 class="rhc-title">成為粽夏夜的一份子</h3>
+          <p class="rhc-desc">不需要包粽子的經驗，只需要帶著好奇心與笑容出現。我們準備好一切，你只需要準備好自己。</p>
+          <ul class="rhc-cl">
+            <li>✓ 活動日期：2025 年 6 月 29 日（端午節前夕）</li>
+            <li>✓ 活動時間：下午 4 點 — 晚上 10 點</li>
+            <li>✓ 報名截止：額滿為止</li>
+            <li>✓ 報名費用：免費（限量開放）</li>
+          </ul>
+          <div class="rhc-ctas">
+            <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-p pulse">🎋 立即報名包粽夥伴</a>
+            <div class="rhc-urg">⚡ 已有 <strong>47</strong> 位夥伴報名</div>
+          </div>
+        </div>
+        <div class="rhc-right">
+          <div class="rhc-vis">
+            <div class="rv-c rv-c1"></div>
+            <div class="rv-c rv-c2"></div>
+            <div class="rv-c rv-c3"></div>
+            <div class="rv-em">🎋</div>
+            <div class="rv-b rv-b1">好玩</div>
+            <div class="rv-b rv-b2">免費</div>
+            <div class="rv-b rv-b3">限量</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="perks-hdr fade-up"><h3>夥伴專屬福利</h3><p>報名就有，完全免費</p></div>
+    <div class="perks-grid">
+      <div class="perk fade-up d1"><div class="perk-ico">🎋</div><div><h4>免費包粽體驗</h4><p>全程材料、工具提供，從零開始學會手作粽子，帶一顆親手包的粽子回家。</p></div></div>
+      <div class="perk fade-up d2"><div class="perk-ico">🍜</div><div><h4>夜市美食吃到飽</h4><p>活動當晚，所有夜市攤位免費暢吃。夜市靈魂在於——吃飽才有力氣包粽。</p></div></div>
+      <div class="perk fade-up d3"><div class="perk-ico">📸</div><div><h4>夢幻場景拍照</h4><p>燈串、蒸氣、復古場景，讓你的每一張照片都是 IG 爆讚的質感大片。</p></div></div>
+      <div class="perk fade-up d1"><div class="perk-ico">🤝</div><div><h4>認識新朋友</h4><p>和一群對生活有熱情的人，在揉米、包葉之間，展開一段新的友誼。</p></div></div>
+      <div class="perk fade-up d2"><div class="perk-ico">🏅</div><div><h4>包粽達人認證</h4><p>活動結束後，獲得專屬「粽夏夜包粽夥伴」限定証書與紀念小物。</p></div></div>
+      <div class="perk fade-up d3"><div class="perk-ico">🌙</div><div><h4>端午夜市夢幻夜</h4><p>不只是活動，是一個你會想在記憶裡收藏的夜晚。光是來了，就值得了。</p></div></div>
+    </div>
+    <div class="r-bot-cta fade-up">
+      <p>等什麼？夢幻夜市只開一晚，錯過今年再等一年</p>
+      <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-p pulse" style="font-size:1.1rem;padding:1rem 2.8rem">加入粽夏夜 ✦</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="proc-inner">
+    <div class="proc-hdr fade-up">
+      <div class="sec-label">✦ How It Works</div>
+      <h2 class="sec-title proc-title">參與流程</h2>
+      <p class="proc-sub">六個步驟，帶你走進粽夏夜之夢</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-step fade-up d1"><div class="step-num">01</div><div class="step-card"><div class="step-ico">📝</div><h3>線上報名</h3><p>點擊報名按鈕，填寫基本資料，不到 2 分鐘完成報名。額滿為止，先搶先贏！</p></div></div>
+      <div class="proc-step fade-up d2"><div class="step-num">02</div><div class="step-card"><div class="step-ico">📱</div><h3>收到確認</h3><p>報名後 24 小時內收到確認通知，裡面有活動詳細資訊、地點 Map 與注意事項。</p></div></div>
+      <div class="proc-step fade-up d3"><div class="step-num">03</div><div class="step-card"><div class="step-ico">🌆</div><h3>當天集合</h3><p>依時間到達會場，超美入口打個卡，進入夢幻夜市模式，一切從這裡開始。</p></div></div>
+      <div class="proc-step fade-up d1"><div class="step-num">04</div><div class="step-card"><div class="step-ico">🎋</div><h3>學習包粽</h3><p>跟著老師傅的節奏，從選葉、舀米、放料到綁繩，每一步都有人指導，超簡單。</p></div></div>
+      <div class="proc-step fade-up d2"><div class="step-num">05</div><div class="step-card"><div class="step-ico">🎉</div><h3>享受夜市</h3><p>包完粽子後，自由探索所有攤位，吃好吃滿，拍個美照，把夜晚玩到最後一刻。</p></div></div>
+      <div class="proc-step fade-up d3"><div class="step-num">06</div><div class="step-card"><div class="step-ico">🏠</div><h3>帶粽回家</h3><p>帶走親手包的粽子、獨家紀念品，還有這個夏夜留下的所有美好回憶。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gal-inner">
+    <div class="gal-hdr fade-up">
+      <div class="sec-label">✦ Atmosphere</div>
+      <h2 class="sec-title gal-title">活動氛圍</h2>
+      <p class="gal-sub">每一個角落，都是夢的一部分</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gi gi-tall fade-up d1"><div class="gi-ph"><div class="gi-em">🏮</div><div class="gi-ov"><span class="gi-lbl">燈籠長廊</span><span class="gi-dsc">數百盞手工燈籠排列成長廊，走進去就像走進一場夢</span></div></div></div>
+      <div class="gi gi-wide fade-up d2"><div class="gi-ph"><div class="gi-em">🎋</div><div class="gi-ov"><span class="gi-lbl">竹影包粽區</span><span class="gi-dsc">老師傅現場示範，新手也能包出完美粽子</span></div></div></div>
+      <div class="gi fade-up d3"><div class="gi-ph"><div class="gi-em">🌙</div><div class="gi-ov"><span class="gi-lbl">夜市全景</span><span class="gi-dsc">入夜後的會場，光影交錯，美得像一幅畫</span></div></div></div>
+      <div class="gi fade-up d1"><div class="gi-ph"><div class="gi-em">🫕</div><div class="gi-ov"><span class="gi-lbl">蒸粽現場</span><span class="gi-dsc">熱氣蒸騰，粽香四溢，這是端午節最美的煙火</span></div></div></div>
+      <div class="gi gi-wide fade-up d2"><div class="gi-ph"><div class="gi-em">🎆</div><div class="gi-ov"><span class="gi-lbl">燈火晚會</span><span class="gi-dsc">活動尾聲的燈火儀式，願望隨燈光升向夜空</span></div></div></div>
+      <div class="gi gi-tall fade-up d3"><div class="gi-ph"><div class="gi-em">✨</div><div class="gi-ov"><span class="gi-lbl">市集攤位</span><span class="gi-dsc">精心佈置的夜市攤位，每個角落都是拍照亮點</span></div></div></div>
+    </div>
+    <div class="gal-note fade-up"><span>📷</span><p>活動現場將設有專業攝影師，提供夥伴們精美活動照片留念</p></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-hdr fade-up">
+      <div class="sec-label">✦ FAQ</div>
+      <h2 class="sec-title faq-title">常見問題</h2>
+      <p class="faq-sub">還有疑問？這裡應該有你要的答案</p>
+    </div>
+    <div id="faqList">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>我完全不會包粽子，可以參加嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>當然可以！這正是我們舉辦這個活動的原因。現場有老師傅全程帶領，從最基礎的動作開始教起，完全不需要任何經驗。很多第一次包粽的夥伴最後都包出了完美的成品！</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>活動費用是多少？需要自備材料嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>完全免費！報名即可參加，所有包粽材料、工具、圍裙都由活動方提供。你唯一需要帶的，是一顆好奇的心和輕鬆的心情。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>活動幾點開始？需要準時到嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>活動從下午 4 點開始，晚上 10 點結束。包粽體驗有固定梯次，建議在下午 5 點前到場報到。夜市攤位從開場到結束全程開放，隨時都可以來逛。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>我可以帶小朋友或朋友一起來嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>非常歡迎！活動適合全年齡層參與，帶著朋友、家人一起來體驗端午節的溫度。請注意，每位參與者都需要單獨填寫報名表，名額有限，請各自完成報名。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>報名後如果臨時有事，可以取消嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>可以的。若無法出席，請在活動前 3 天透過報名確認信上的聯絡方式通知我們，讓名額可以釋放給其他等待中的夥伴。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>包好的粽子可以帶回家嗎？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>當然！你親手包的粽子就是你的，活動提供精美包裝袋讓你帶回家。可以自己吃，也可以送給家人，把這個夏夜的溫度一起分享出去。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>活動當天如果下雨怎麼辦？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>活動設有室內備案場地，風雨無阻。如遇特殊天候狀況，我們會提前透過報名信件通知所有夥伴，請注意查收確認信。</p></div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span>活動在哪裡舉辦？</span><div class="faq-ico">+</div></button><div class="faq-a"><p>詳細地點將在報名確認信中提供。現場有規劃停車區域，同時也鼓勵夥伴搭乘大眾運輸，一起減少碳排放，讓端午節更環保。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-cta fade-up">
+    <div class="ft-cta-glow"></div>
+    <div class="ft-lans">
+      <span class="ft-lan" style="animation-delay:0s">🏮</span>
+      <span class="ft-lan" style="animation-delay:.3s">🏮</span>
+      <span class="ft-lan" style="animation-delay:.6s">🏮</span>
+      <span class="ft-lan" style="animation-delay:.9s">🏮</span>
+      <span class="ft-lan" style="animation-delay:1.2s">🏮</span>
+    </div>
+    <h2 class="ft-cta-title">粽夏夜，等你一起做夢</h2>
+    <p class="ft-cta-sub">2025 年最夢幻的端午夜市體驗，名額有限，不留遺憾</p>
+    <div class="ft-cta-btns">
+      <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-p pulse">🎋 立即報名包粽夥伴</a>
+      <a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener" class="btn-o">加入粽夏夜 ✦</a>
+    </div>
+    <div class="ft-dl">⏰ 活動日期：2025.06.29 ｜ 名額有限，即刻報名</div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-bot-in">
+      <div class="ft-logo-a">
+        <img src="logo.png" alt="粽夏夜" class="ft-logo" onerror="this.style.display='none'"/>
+        <div><div class="ft-brand">粽夏夜 ZONG DREAM</div><div class="ft-tag">端午節最夢幻的夜市體驗</div></div>
+      </div>
+      <div class="ft-links">
+        <div class="ft-col"><h4>快速連結</h4><ul>
+          <li><a href="#about">活動介紹</a></li>
+          <li><a href="#zongzi">粽子展示</a></li>
+          <li><a href="#recruit">招募夥伴</a></li>
+          <li><a href="#process">參與流程</a></li>
+          <li><a href="#faq">常見問題</a></li>
+        </ul></div>
+        <div class="ft-col"><h4>報名資訊</h4><ul>
+          <li><a href="https://www.surveycake.com/s/K9BoY" target="_blank" rel="noopener">立即報名 →</a></li>
+          <li><span>活動日期：2025.06.29</span></li>
+          <li><span>時間：16:00 — 22:00</span></li>
+          <li><span>費用：完全免費</span></li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="ft-div"></div>
+    <div class="ft-copy">
+      <span>© 2025 粽夏夜 ZONG DREAM. All rights reserved.</span>
+      <span>用 ❤️ 與粽葉製作</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+function toggleMenu() {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+}
+function closeMenu() {
+  hamburger.classList.remove('open');
+  navLinks.classList.remove('open');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Zongzi filter
+function filterZz(type, btn) {
+  document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.zz-card').forEach(card => {
+    const match = type === 'all' || card.dataset.type === type;
+    card.style.display = match ? '' : 'none';
+  });
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-ico').textContent = '+';
+  });
+  if (!wasOpen) {
+    item.classList.add('open');
+    btn.querySelector('.faq-ico').textContent = '−';
+  }
+}
+
+// Generate floating particles
+const hero = document.getElementById('hero');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  Object.assign(p.style, {
+    left: Math.random() * 100 + '%',
+    bottom: Math.random() * 40 + '%',
+    animationDelay: Math.random() * 5 + 's',
+    animationDuration: (3 + Math.random() * 4) + 's',
+    width: (2 + Math.random() * 3) + 'px',
+    height: (2 + Math.random() * 3) + 'px',
+  });
+  hero.appendChild(p);
+}
+</script>
+</body>
+</html>

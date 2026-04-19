@@ -1,0 +1,171 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+.footer-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--black) 0%, #06070f 100%);
+  z-index: 0;
+}
+
+/* Final CTA Banner */
+.footer-cta-banner {
+  position: relative;
+  z-index: 1;
+  margin: 0 3rem;
+  padding: 5rem 3rem;
+  border: 1px solid rgba(245,200,66,0.2);
+  border-radius: 8px;
+  text-align: center;
+  background: rgba(245,200,66,0.03);
+  overflow: hidden;
+}
+.fcb-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(245,200,66,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.fcb-lanterns {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.fcb-lantern {
+  font-size: 1.5rem;
+  animation: lanternSway 2.5s ease-in-out infinite;
+}
+.fcb-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--warm-white);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(180deg, #fff8e0 0%, var(--gold-light) 60%, var(--amber) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.fcb-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+.fcb-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.fcb-cta {
+  font-size: 1.05rem !important;
+  padding: 1rem 2.5rem !important;
+}
+.fcb-deadline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 3rem 2rem;
+}
+.footer-bottom-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.footer-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.footer-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(245,200,66,0.3));
+}
+.footer-brand {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.footer-tagline {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-links-grid {
+  display: flex;
+  gap: 4rem;
+}
+.footer-col h4 {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.footer-col li a,
+.footer-col li span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-col li a:hover { color: var(--gold); }
+
+.footer-divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin-bottom: 1.5rem;
+}
+.footer-copyright {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .footer-cta-banner { margin: 0 1.5rem; padding: 3.5rem 1.5rem; }
+  .footer-bottom { padding: 3rem 1.5rem 2rem; }
+  .footer-bottom-inner { flex-direction: column; gap: 2.5rem; }
+  .footer-links-grid { gap: 2rem; }
+}
+@media (max-width: 500px) {
+  .fcb-cta-group { flex-direction: column; }
+  .fcb-cta { width: 100%; justify-content: center; }
+  .footer-links-grid { flex-direction: column; gap: 1.5rem; }
+  .footer-copyright { flex-direction: column; text-align: center; }
+}

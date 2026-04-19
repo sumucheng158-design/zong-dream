@@ -1,0 +1,168 @@
+.zongzi {
+  position: relative;
+  padding: 8rem 3rem;
+  overflow: hidden;
+}
+.zongzi-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--black) 0%, #0a0d1a 50%, var(--black) 100%);
+  z-index: 0;
+}
+.zongzi-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+
+.zongzi-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.zongzi-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+.zongzi-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--warm-white);
+  margin-bottom: 0.8rem;
+}
+.zongzi-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.zongzi-filter {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(245, 200, 66, 0.2);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.08em;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: rgba(245, 200, 66, 0.1);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.zongzi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.zongzi-card {
+  position: relative;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 2rem 1.5rem;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: default;
+}
+.zongzi-card:hover {
+  border-color: var(--card-color, var(--gold));
+  transform: translateY(-6px);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+.card-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.zongzi-card:hover .card-glow { opacity: 1; }
+
+.zongzi-emoji {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.zongzi-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
+}
+.tag-classic {
+  background: rgba(139, 115, 85, 0.2);
+  color: #c9a460;
+  border: 1px solid rgba(139, 115, 85, 0.4);
+}
+.tag-creative {
+  background: rgba(240, 112, 48, 0.15);
+  color: var(--amber);
+  border: 1px solid rgba(240, 112, 48, 0.35);
+}
+
+.zongzi-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--warm-white);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.zongzi-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.zongzi-ingredients {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.zongzi-ingredients.show { max-height: 100px; }
+.ing-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.ing-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.ing-tag {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(245, 200, 66, 0.07);
+  border: 1px solid rgba(245, 200, 66, 0.2);
+  border-radius: 2px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .zongzi { padding: 5rem 1.5rem; }
+  .zongzi-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 580px) {
+  .zongzi-grid { grid-template-columns: 1fr; }
+}

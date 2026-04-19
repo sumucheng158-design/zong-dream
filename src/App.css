@@ -1,0 +1,14 @@
+.app {
+  min-height: 100vh;
+  background: var(--black);
+  position: relative;
+}
+
+main {
+  position: relative;
+}
+
+/* Smooth section transitions */
+section + section {
+  position: relative;
+}
