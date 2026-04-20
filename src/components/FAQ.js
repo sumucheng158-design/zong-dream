@@ -66,7 +66,7 @@ export default function FAQ() {
             return (
               <div
                 key={item.id}
-                className={`faq-item fade-up delay-${(i % 3) + 1} ${isOpen ? 'open' : ''}`}
+                className={`faq-item ${isOpen ? 'open' : ''}`}
                 role="listitem"
               >
                 <button

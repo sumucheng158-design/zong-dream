@@ -124,8 +124,8 @@
   margin-bottom: 1.5rem;
 }
 .hero-logo {
-  width: 160px;
-  height: 160px;
+  width: 240px;
+  height: 240px;
   object-fit: contain;
   filter: drop-shadow(0 0 24px rgba(245,200,66,0.5));
   animation: float 4s ease-in-out infinite;
@@ -275,7 +275,7 @@
 
 @media (max-width: 600px) {
   .hero { padding: 7rem 1.5rem 5rem; }
-  .hero-logo { width: 120px; height: 120px; }
+  .hero-logo { width: 180px; height: 180px; }
   .hero-cta-line { display: inline-flex; align-items: center; gap: 0.5rem; }
   .hero-stats { gap: 1.5rem; padding: 1rem 1.5rem; }
   .stat-num { font-size: 1.1rem; }

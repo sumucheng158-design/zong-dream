@@ -52,7 +52,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="主選單">
       <a href="#hero" className="navbar-logo" aria-label="回到頂部 — 粽夏夜 ZONG DREAM">
-        <img src="/logo.png" alt="粽夏夜 ZONG DREAM" width="48" height="48" />
+        <img src="/logo.png" alt="粽夏夜 ZONG DREAM" width="72" height="72" />
       </a>
 
       {/* Overlay for mobile */}
