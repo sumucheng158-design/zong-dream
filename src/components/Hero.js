@@ -132,7 +132,7 @@ export default function Hero() {
 
         <div className="hero-stats fade-up visible delay-5">
           <div className="stat">
-            <span className="stat-num">6.29</span>
+            <span className="stat-num">6.19</span>
             <span className="stat-label">活動日期</span>
           </div>
           <div className="stat-divider" aria-hidden="true" />
