@@ -116,21 +116,24 @@ export default function Gallery() {
                 className="gi-placeholder"
                 style={{ '--gi-accent': item.accent, '--gi-border': item.border }}
               >
-            {item.image ? (
-              <img 
-                src={item.image} 
-                alt={item.label} 
-                className="gi-image"
-               />
-              ) : (
-                <div className="gi-icon">{item.icon}</div>
-                <div className="gi-label-static">{item.label}</div>
-                <div className="gi-overlay">
-                  <span className="gi-label">{item.label}</span>
-                  <span className="gi-desc">{item.desc}</span>
-                </div>
-                <div className="gi-corner tl" /><div className="gi-corner tr" />
-                <div className="gi-corner bl" /><div className="gi-corner br" />
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="gi-image"
+                  />
+                ) : (
+                  <>
+                    <div className="gi-icon">{item.icon}</div>
+                    <div className="gi-label-static">{item.label}</div>
+                    <div className="gi-overlay">
+                      <span className="gi-label">{item.label}</span>
+                      <span className="gi-desc">{item.desc}</span>
+                    </div>
+                    <div className="gi-corner tl" /><div className="gi-corner tr" />
+                    <div className="gi-corner bl" /><div className="gi-corner br" />
+                  </>
+                )}
               </div>
             </div>
           ))}
