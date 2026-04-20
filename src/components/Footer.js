@@ -81,7 +81,7 @@ export default function Footer() {
             粽夏夜，等你一起做夢
           </h2>
           <p className="fcb-sub">
-            2026年最夢幻的端午夜市體驗，名額有限，不留遺憾
+            2026年最沉浸式的端午體驗，名額有限，不留遺憾
           </p>
           <div className="fcb-cta-group">
             <a
