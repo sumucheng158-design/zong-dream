@@ -61,7 +61,7 @@ export default function About() {
           </h2>
           <div className="about-divider" />
           <p className="about-text">
-            端午節不只是吃粽子的節日——它是一個關於傳承、創造、與人相聚的夏夜儀式。
+            端午節不只是吃粽子的節日，它是一個關於傳承、創造、與人相聚的夏夜儀式。
           </p>
           <p className="about-text">
             「粽夏夜之夢」是一場沉浸式夜市體驗，我們把端午節的靈魂打包成一個充滿燈火、香氣、笑聲的夢幻空間。
@@ -89,7 +89,7 @@ export default function About() {
       {/* Origin story */}
       <div className="origin-strip fade-up">
         <div className="origin-content">
-          <div className="origin-year">西元前 278</div>
+          <div className="origin-year">西元前278年</div>
           <div className="origin-line" />
           <div className="origin-text">
             屈原投江，百姓以粽葉包米投入江中，既是祭祀也是守護。

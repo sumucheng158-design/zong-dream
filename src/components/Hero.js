@@ -94,8 +94,8 @@ export default function Hero() {
           <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="hero-logo" width="240" height="240" />
         </div>
 
-        <div className="hero-tag fade-up visible delay-1" aria-label="2025 端午節限定">
-          <span aria-hidden="true">✦</span> 2025 端午節限定 <span aria-hidden="true">✦</span>
+        <div className="hero-tag fade-up visible delay-1" aria-label="2026端午節限定">
+          <span aria-hidden="true">✦</span> 2026端午節限定 <span aria-hidden="true">✦</span>
         </div>
 
         <h1 className="hero-title fade-up visible delay-2">

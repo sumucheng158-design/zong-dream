@@ -73,7 +73,7 @@ const IconDeco = () => (
 const perks = [
   { icon: <IconBamboo />, id: 'wrapping', title: '免費包粽體驗', desc: '全程材料、工具提供，從零開始學會手作粽子，帶一顆親手包的粽子回家。' },
   { icon: <IconBowl />,   id: 'food',     title: '夜市美食吃到飽', desc: '活動當晚，所有夜市攤位免費暢吃。夜市靈魂在於——吃飽才有力氣包粽。' },
-  { icon: <IconCamera />, id: 'photo',    title: '夢幻場景拍照', desc: '燈串、蒸氣、復古場景設計，讓你的每一張照片都是 IG 爆讚的質感大片。' },
+  { icon: <IconCamera />, id: 'photo',    title: '夢幻場景拍照', desc: '燈串、蒸氣、復古場景設計，讓你的每一張照片都是IG爆讚的質感大片。' },
   { icon: <IconHandshake />, id: 'friends', title: '認識新朋友', desc: '和一群對生活有熱情的人一起，在揉米、包葉之間，展開一段新的友誼。' },
   { icon: <IconMedal />,  id: 'cert',     title: '包粽達人認證', desc: '活動結束後，獲得專屬「粽夏夜包粽夥伴」限定証書與紀念小物。' },
   { icon: <IconMoon />,   id: 'night',    title: '端午夜市夢幻夜', desc: '不只是活動，是一個你會想在記憶裡收藏的夜晚。光是來了，就值得了。' },
@@ -112,8 +112,8 @@ export default function Recruit() {
                 我們準備好一切，你只需要準備好自己。
               </p>
               <ul className="rhc-checklist">
-                <li><CheckItem label="活動日期：2025 年 6 月 29 日（端午節前夕）" /></li>
-                <li><CheckItem label="活動時間：下午 4 點 — 晚上 10 點" /></li>
+                <li><CheckItem label="活動日期：2026年6月19日（端午節當天）" /></li>
+                <li><CheckItem label="活動時間：下午4點 — 晚上10點" /></li>
                 <li><CheckItem label="報名截止：額滿為止" /></li>
                 <li><CheckItem label="報名費用：免費（限量開放）" /></li>
               </ul>

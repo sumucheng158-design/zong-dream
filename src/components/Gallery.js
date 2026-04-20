@@ -70,7 +70,7 @@ const IconSparkle = () => (
 
 // Accent colors for each gallery tile
 const galleryItems = [
-  { id: 'lantern', icon: <IconLantern />, image: '/images/gallery/lantern.jpg', label: '燈籠長廊', desc: '數百盞手工燈籠排列成長廊，走進去就像走進一場夢', aspect: 'tall', accent: 'rgba(240,112,48,0.18)', border: 'rgba(240,112,48,0.35)' },
+  { id: 'lantern', icon: <IconLantern />, image:'/images/gallery/lantern.jpg' , label: '燈籠長廊', desc: '數百盞手工燈籠排列成長廊，走進去就像走進一場夢', aspect: 'tall', accent: 'rgba(240,112,48,0.18)', border: 'rgba(240,112,48,0.35)' },
   { id: 'bamboo', icon: <IconBamboo />, image: '/images/gallery/leaf.jpg', label: '竹影包粽區', desc: '老師傅現場示範，新手也能包出完美粽子', aspect: 'wide', accent: 'rgba(80,180,80,0.12)', border: 'rgba(80,180,80,0.3)' },
   { id: 'moon', icon: <IconMoon />, image: '/images/gallery/nightmarket.jpg', label: '夜市全景', desc: '入夜後的會場，光影交錯，美得像一幅畫', aspect: 'normal', accent: 'rgba(100,120,220,0.12)', border: 'rgba(100,120,220,0.3)' },
   { id: 'pot', icon: <IconPot />, image: '/images/gallery/bamboo.jpg', label: '蒸粽現場', desc: '熱氣蒸騰，粽香四溢，這是端午節最美的煙火', aspect: 'normal', accent: 'rgba(245,200,66,0.1)', border: 'rgba(245,200,66,0.3)' },
@@ -116,10 +116,14 @@ export default function Gallery() {
                 className="gi-placeholder"
                 style={{ '--gi-accent': item.accent, '--gi-border': item.border }}
               >
-                {item.image
-                  ? <img src={item.image} alt={item.label} className="gi-image" />
-                  : <div className="gi-icon">{item.icon}</div>
-                }
+            {item.image ? (
+              <img 
+                src={item.image} 
+                alt={item.label} 
+                className="gi-image"
+               />
+              ) : (
+                <div className="gi-icon">{item.icon}</div>
                 <div className="gi-label-static">{item.label}</div>
                 <div className="gi-overlay">
                   <span className="gi-label">{item.label}</span>

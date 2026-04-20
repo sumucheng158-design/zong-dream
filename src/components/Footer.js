@@ -81,7 +81,7 @@ export default function Footer() {
             粽夏夜，等你一起做夢
           </h2>
           <p className="fcb-sub">
-            2025 年最夢幻的端午夜市體驗，名額有限，不留遺憾
+            2026年最夢幻的端午夜市體驗，名額有限，不留遺憾
           </p>
           <div className="fcb-cta-group">
             <a
@@ -111,7 +111,7 @@ export default function Footer() {
                 <path d="M8 4.5V8L10.5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
-            活動日期：2025.06.29 ｜ 名額有限，即刻報名
+            活動日期：2026.06.19 ｜ 名額有限，即刻報名
           </div>
         </div>
       </div>
@@ -122,8 +122,8 @@ export default function Footer() {
           <div className="footer-logo-area">
             <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="footer-logo" width="48" height="48" />
             <div>
-              <div className="footer-brand">粽夏夜 ZONG DREAM</div>
-              <div className="footer-tagline">端午節最夢幻的夜市體驗</div>
+              <div className="footer-brand">粽夏夜ZONG DREAM</div>
+              <div className="footer-tagline">沉浸式端午節體驗</div>
             </div>
           </div>
 
@@ -142,8 +142,8 @@ export default function Footer() {
               <h4>報名資訊</h4>
               <ul>
                 <li><a href={FORM_URL} target="_blank" rel="noopener noreferrer">立即報名</a></li>
-                <li><span>活動日期：2025.06.29</span></li>
-                <li><span>時間：16:00 — 22:00</span></li>
+                <li><span>活動日期：2025.06.19</span></li>
+                <li><span>活動時間：16:00 — 22:00</span></li>
                 <li><span>費用：完全免費</span></li>
               </ul>
             </div>
@@ -153,7 +153,7 @@ export default function Footer() {
         <div className="footer-divider" />
 
         <div className="footer-copyright">
-          <span>© 2025 粽夏夜 ZONG DREAM. All rights reserved.</span>
+          <span>© 2026粽夏夜ZONG DREAM. All rights reserved.</span>
           <span className="footer-made">
             用 <IconHeart /> 與粽葉製作
           </span>

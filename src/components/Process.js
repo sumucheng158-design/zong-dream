@@ -51,8 +51,8 @@ const IconHome = () => (
 );
 
 const steps = [
-  { num: '01', icon: <IconPen />, id: 'register', title: '線上報名', desc: '點擊報名按鈕，填寫基本資料，不到 2 分鐘完成報名。額滿為止，先搶先贏！' },
-  { num: '02', icon: <IconPhone />, id: 'confirm', title: '收到確認', desc: '報名後 24 小時內收到確認通知，裡面有活動詳細資訊、地點 Map 與注意事項。' },
+  { num: '01', icon: <IconPen />, id: 'register', title: '線上報名', desc: '點擊報名按鈕，填寫基本資料，不到2分鐘完成報名。額滿為止，先搶先贏！' },
+  { num: '02', icon: <IconPhone />, id: 'confirm', title: '收到確認', desc: '報名後24小時內收到確認通知，裡面有活動詳細資訊、地點 Map 與注意事項。' },
   { num: '03', icon: <IconCity />, id: 'gather', title: '當天集合', desc: '依時間到達會場，超美入口打個卡，進入夢幻夜市模式，一切從這裡開始。' },
   { num: '04', icon: <IconBamboo />, id: 'wrap', title: '學習包粽', desc: '跟著老師傅的節奏，從選葉、舀米、放料到綁繩，每一步都有人指導，超簡單。' },
   { num: '05', icon: <IconParty />, id: 'enjoy', title: '享受夜市', desc: '包完粽子後，自由探索所有攤位，吃好吃滿，拍個美照，把夜晚玩到最後一刻。' },
