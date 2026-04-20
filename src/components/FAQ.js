@@ -84,7 +84,7 @@ export default function FAQ() {
                   id={`faq-answer-${item.id}`}
                   role="region"
                   aria-labelledby={`faq-btn-${item.id}`}
-                  hidden={!isOpen}
+                  aria-hidden={!isOpen}
                 >
                   <p>{item.a}</p>
                 </div>

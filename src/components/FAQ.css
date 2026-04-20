@@ -97,17 +97,11 @@
   border-color: var(--gold);
 }
 
-/* Use CSS animation rather than max-height hack — more reliable with hidden attr */
+/* Answer panel — controlled purely by CSS class, no hidden attribute */
 .faq-answer {
   overflow: hidden;
+  max-height: 0;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  max-height: 0;
-}
-/* Override [hidden] to allow transition */
-.faq-answer[hidden] {
-  display: block;
-  max-height: 0;
-  padding-bottom: 0;
   visibility: hidden;
 }
 .faq-item.open .faq-answer {
