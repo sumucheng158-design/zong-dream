@@ -9,9 +9,9 @@ export const FORM_URL = 'https://www.surveycake.com/s/K9BoY';
 export const LINE_URL = 'https://line.me/ti/g/zongdream2026'; // ⚠️ 上線前換成正式社群連結
 
 // ── 活動資訊 ────────────────────────────────────────────────
-export const EVENT_DATE = new Date('2026-06-29T16:00:00+08:00'); // 活動開始時間（台灣時區）
-export const EVENT_DATE_DISPLAY = '2026.06.29';                  // 顯示用字串（點分格式）
-export const EVENT_DATE_ZH = '2026年6月29日';                    // 顯示用字串（中文格式）
+export const EVENT_DATE = new Date('2026-06-19T16:00:00+08:00'); // 活動開始時間（台灣時區）
+export const EVENT_DATE_DISPLAY = '2026.06.19';                  // 顯示用字串（點分格式）
+export const EVENT_DATE_ZH = '2026年6月19日';                    // 顯示用字串（中文格式）
 export const EVENT_TIME = '16:00 — 22:00';
 export const EVENT_YEAR = '2026';
 
