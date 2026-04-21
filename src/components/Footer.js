@@ -128,7 +128,7 @@ export default function Footer() {
         <div className="footer-divider" />
 
         <div className="footer-copyright">
-          <span>© {EVENT_YEAR}粽夏夜 ZONG DREAM. All rights reserved.</span>
+          <span>© {EVENT_YEAR} 粽夏夜 ZONG DREAM. All rights reserved.</span>
           <span className="footer-made">
             用 <IconHeart className="footer-heart" /> 與粽葉製作
           </span>
