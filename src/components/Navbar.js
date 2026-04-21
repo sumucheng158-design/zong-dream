@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Navbar.css';
-
-const FORM_URL = 'https://www.surveycake.com/s/K9BoY';
+import { FORM_URL } from '../config';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -52,7 +51,10 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="主選單">
       <a href="#hero" className="navbar-logo" aria-label="回到頂部 — 粽夏夜 ZONG DREAM">
-        <img src="/logo.png" alt="粽夏夜 ZONG DREAM" width="72" height="72" />
+        <picture>
+          <source srcSet="/logo.webp" type="image/webp" />
+          <img src="/logo.png" alt="粽夏夜 ZONG DREAM" width="72" height="72" />
+        </picture>
       </a>
 
       {/* Overlay for mobile */}

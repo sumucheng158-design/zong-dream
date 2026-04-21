@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+    <!-- Preload hero logo — above the fold, critical LCP image -->
+    <link rel="preload" as="image" href="%PUBLIC_URL%/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0a0a0f" />
     <meta name="description" content="粽夏夜之夢 Zong Dream Festival — 端午節包粽體驗" />
@@ -11,6 +13,8 @@
     <title>粽夏夜 ZONG DREAM</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical font subsets to prevent FOUT on Chinese text -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Cinzel+Decorative:wght@400&family=Noto+Sans+TC:wght@400;500&display=swap&subset=chinese-traditional" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet" />
   </head>
   <body>

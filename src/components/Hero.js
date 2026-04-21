@@ -1,27 +1,11 @@
 import React from 'react';
 import './Hero.css';
+import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY } from '../config';
+import { IconBamboo, IconLine } from './Icons';
+import { useCountUp } from '../hooks/useCountUp';
+import Countdown from './Countdown';
 
-const FORM_URL = 'https://www.surveycake.com/s/K9BoY';
-const LINE_URL = 'https://line.me/ti/g/zongdream2025'; // 替換為實際 LINE 社群連結
 
-const IconBamboo = () => (
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="hero-btn-icon">
-    <rect x="13" y="2" width="4" height="28" rx="2" fill="currentColor" opacity="0.9"/>
-    <rect x="7" y="8" width="4" height="20" rx="2" fill="currentColor" opacity="0.7"/>
-    <rect x="19" y="5" width="4" height="22" rx="2" fill="currentColor" opacity="0.8"/>
-    <path d="M13 10 Q8 8 6 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-    <path d="M17 14 Q22 12 24 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-    <path d="M13 18 Q8 16 6 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.6"/>
-  </svg>
-);
-
-const IconLine = () => (
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="hero-btn-icon">
-    <rect x="3" y="3" width="26" height="26" rx="7" fill="currentColor" opacity="0.15"/>
-    <path d="M16 7C10.477 7 6 10.81 6 15.5c0 3.07 1.96 5.76 4.9 7.31-.19.7-.69 2.53-.79 2.92-.12.48.17.47.36.34.15-.1 2.4-1.63 3.37-2.29.69.1 1.41.15 2.16.15 5.523 0 10-3.81 10-8.5S21.523 7 16 7z" fill="currentColor" opacity="0.9"/>
-    <path d="M13 17v-4M13 13h2.5M13 15h2M19 17v-4M17 13v4h2" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 function LanternString({ count = 8, top = '8%', delay = 0 }) {
   return (
@@ -49,6 +33,11 @@ const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
 }));
 
 export default function Hero() {
+  // Count-up animations for stats (第2、第3個數字格)
+  // 第1格是日期文字，不需要動畫；第2、第3格目前是文字，以後若改為數字可加在這裡
+  // 預留 participant count 作為未來範例
+  const participants = useCountUp(200, 1800);
+
   return (
     <section className="hero" id="hero">
       {/* Background layers */}
@@ -91,7 +80,10 @@ export default function Hero() {
       {/* Content */}
       <div className="hero-content">
         <div className="hero-logo-wrap fade-in visible">
-          <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="hero-logo" width="240" height="240" />
+          <picture>
+            <source srcSet="/logo.webp" type="image/webp" />
+            <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="hero-logo" width="240" height="240" />
+          </picture>
         </div>
 
         <div className="hero-tag fade-up visible delay-1" aria-label="2026端午節限定">
@@ -117,7 +109,7 @@ export default function Hero() {
             className="btn-primary pulse-btn hero-cta-main"
             aria-label="立即報名包粽夥伴（開啟新視窗）"
           >
-            <IconBamboo /> 立即報名包粽夥伴
+            <IconBamboo className="hero-btn-icon" /> 立即報名包粽夥伴
           </a>
           <a
             href={LINE_URL}
@@ -126,19 +118,28 @@ export default function Hero() {
             className="btn-outline hero-cta-line"
             aria-label="加入粽夏夜 LINE 社群（開啟新視窗）"
           >
-            <IconLine /> 加入粽夏夜 +
+            <IconLine className="hero-btn-icon" /> 加入粽夏夜 +
           </a>
         </div>
 
+        {/* 倒數計時器 */}
+        <Countdown />
+
         <div className="hero-stats fade-up visible delay-5">
           <div className="stat">
-            <span className="stat-num">6.19</span>
+            <span className="stat-num">{EVENT_DATE_DISPLAY.replace('2026.', '')}</span>
             <span className="stat-label">活動日期</span>
           </div>
           <div className="stat-divider" aria-hidden="true" />
           <div className="stat">
-            <span className="stat-num">夜市</span>
-            <span className="stat-label">沉浸式場景</span>
+            <span
+              ref={participants.ref}
+              className="stat-num"
+              aria-label={`超過 ${participants.value} 人`}
+            >
+              {participants.value}+
+            </span>
+            <span className="stat-label">預期參與人數</span>
           </div>
           <div className="stat-divider" aria-hidden="true" />
           <div className="stat">

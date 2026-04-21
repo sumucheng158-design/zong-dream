@@ -97,11 +97,12 @@
   border-color: var(--gold);
 }
 
-/* Answer panel — controlled purely by CSS class, no hidden attribute */
+/* Answer panel — collapsed via CSS; inert attr handled by JS if needed */
 .faq-answer {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease, padding 0.3s ease;
+  /* visibility:hidden removes from tab order & AT when collapsed */
   visibility: hidden;
 }
 .faq-item.open .faq-answer {

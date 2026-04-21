@@ -1,7 +1,7 @@
 import React from 'react';
 import './Footer.css';
-
-const FORM_URL = 'https://www.surveycake.com/s/K9BoY';
+import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY, EVENT_YEAR } from '../config';
+import { IconDeco, IconHeart, IconBamboo } from './Icons';
 
 // Pure SVG lantern component — replaces 🏮 emoji
 function SvgLantern({ style }) {
@@ -37,29 +37,10 @@ function SvgLantern({ style }) {
 }
 
 // Deco star replacing ✦ in button
-const IconDeco = () => (
-  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="footer-deco-icon">
-    <path d="M8 2L9 6.5L13.5 7.5L9 8.5L8 13L7 8.5L2.5 7.5L7 6.5Z" fill="currentColor"/>
-  </svg>
-);
 
 // Heart icon replacing ❤️
-const IconHeart = () => (
-  <svg viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="footer-heart">
-    <path d="M10 16S1 10.5 1 5C1 2.8 2.8 1 5 1C6.8 1 8.4 2.1 10 4C11.6 2.1 13.2 1 15 1C17.2 1 19 2.8 19 5C19 10.5 10 16 10 16Z" fill="#e8941a" opacity="0.85"/>
-  </svg>
-);
 
 // Bamboo icon for CTA button
-const IconBamboo = () => (
-  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="footer-btn-icon">
-    <rect x="8" y="1" width="3" height="18" rx="1.5" fill="currentColor" opacity="0.9"/>
-    <rect x="4" y="5" width="3" height="13" rx="1.5" fill="currentColor" opacity="0.7"/>
-    <rect x="12" y="3" width="3" height="14" rx="1.5" fill="currentColor" opacity="0.8"/>
-    <path d="M8 7 Q5 5 4 3" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6"/>
-    <path d="M11 10 Q14 8 15 6" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.6"/>
-  </svg>
-);
 
 const LANTERN_COUNT = 5;
 
@@ -81,7 +62,7 @@ export default function Footer() {
             粽夏夜，等你一起做夢
           </h2>
           <p className="fcb-sub">
-            2026年最沉浸式的端午體驗，名額有限，不留遺憾
+            2026年最夢幻的端午夜市體驗，名額有限，不留遺憾
           </p>
           <div className="fcb-cta-group">
             <a
@@ -91,7 +72,7 @@ export default function Footer() {
               className="btn-primary pulse-btn fcb-cta"
               aria-label="立即報名包粽夥伴（開啟新視窗）"
             >
-              <IconBamboo /> 立即報名包粽夥伴
+              <IconBamboo className="footer-btn-icon" /> 立即報名包粽夥伴
             </a>
             <a
               href={FORM_URL}
@@ -100,7 +81,7 @@ export default function Footer() {
               className="btn-outline"
               aria-label="加入粽夏夜（開啟新視窗）"
             >
-              加入粽夏夜 <IconDeco />
+              加入粽夏夜 <IconDeco className="footer-deco-icon" />
             </a>
           </div>
           <div className="fcb-deadline">
@@ -120,7 +101,10 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
           <div className="footer-logo-area">
-            <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="footer-logo" width="48" height="48" />
+            <picture>
+              <source srcSet="/logo.webp" type="image/webp" />
+              <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="footer-logo" width="48" height="48" />
+            </picture>
             <div>
               <div className="footer-brand">粽夏夜ZONG DREAM</div>
               <div className="footer-tagline">沉浸式端午節體驗</div>
@@ -142,7 +126,7 @@ export default function Footer() {
               <h4>報名資訊</h4>
               <ul>
                 <li><a href={FORM_URL} target="_blank" rel="noopener noreferrer">立即報名</a></li>
-                <li><span>活動日期：2025.06.19</span></li>
+                <li><span>活動日期：{EVENT_DATE_DISPLAY}</span></li>
                 <li><span>活動時間：16:00 — 22:00</span></li>
                 <li><span>費用：完全免費</span></li>
               </ul>
@@ -155,7 +139,7 @@ export default function Footer() {
         <div className="footer-copyright">
           <span>© 2026粽夏夜ZONG DREAM. All rights reserved.</span>
           <span className="footer-made">
-            用 <IconHeart /> 與粽葉製作
+            用 <IconHeart className="footer-heart" /> 與粽葉製作
           </span>
         </div>
       </div>

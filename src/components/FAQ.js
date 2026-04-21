@@ -60,14 +60,14 @@ export default function FAQ() {
           <p className="faq-sub">還有疑問？這裡應該有你要的答案</p>
         </div>
 
-        <div className="faq-list" role="list">
+        {/* Accordion: no role="list" needed — structure is implicit via heading + buttons */}
+        <div className="faq-list">
           {faqs.map((item, i) => {
             const isOpen = open === item.id;
             return (
               <div
                 key={item.id}
                 className={`faq-item ${isOpen ? 'open' : ''}`}
-                role="listitem"
               >
                 <button
                   className="faq-question"
@@ -79,12 +79,17 @@ export default function FAQ() {
                   <span>{item.q}</span>
                   <div className="faq-icon" aria-hidden="true">{isOpen ? '−' : '+'}</div>
                 </button>
+                {/*
+                  role="region" + aria-labelledby satisfies ARIA Authoring Practices for
+                  accordion panels. We intentionally omit aria-hidden so screen readers
+                  can still discover the panel via aria-controls; CSS visibility handles
+                  the visual collapse without hiding from the accessibility tree.
+                */}
                 <div
                   className="faq-answer"
                   id={`faq-answer-${item.id}`}
                   role="region"
                   aria-labelledby={`faq-btn-${item.id}`}
-                  aria-hidden={!isOpen}
                 >
                   <p>{item.a}</p>
                 </div>
