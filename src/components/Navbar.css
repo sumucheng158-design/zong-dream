@@ -96,6 +96,11 @@
   outline-offset: 4px;
 }
 
+/* Mobile CTA — hidden on desktop, shown inside drawer */
+.navbar-mobile-cta-item {
+  display: none;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -176,5 +181,21 @@
 
   .navbar-links.open { right: 0; }
   .navbar-links a { font-size: 1.1rem; }
+
+  /* Hide desktop CTA button, show mobile one inside drawer */
   .navbar-cta { display: none; }
+
+  .navbar-mobile-cta-item {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  .navbar-mobile-cta {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem !important;
+    padding: 0.85rem 1.5rem !important;
+    min-height: 48px; /* 無障礙最小點擊區域 */
+  }
 }

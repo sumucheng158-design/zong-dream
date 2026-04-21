@@ -1,6 +1,6 @@
 import React from 'react';
 import './Recruit.css';
-import { FORM_URL } from '../config';
+import { FORM_URL, EVENT_DATE_ZH, EVENT_TIME } from '../config';
 import { IconBamboo, IconBowl, IconCamera, IconHandshake, IconMedal, IconMoon, IconFlash, IconCheck, IconDeco } from './Icons';
 
 // SVG Icons replacing emojis
@@ -47,10 +47,10 @@ export default function Recruit() {
                 我們準備好一切，你只需要準備好自己。
               </p>
               <ul className="rhc-checklist">
-                <li><CheckItem label="活動日期：2026年6月19日（端午節當天）" /></li>
-                <li><CheckItem label="活動時間：下午4點 — 晚上10點" /></li>
-                <li><CheckItem label="報名截止：額滿為止" /></li>
-                <li><CheckItem label="報名費用：免費（限量開放）" /></li>
+                <li><CheckItem>活動日期：{EVENT_DATE_ZH}（端午節當天）</CheckItem></li>
+                <li><CheckItem>活動時間：{EVENT_TIME}</CheckItem></li>
+                <li><CheckItem>報名截止：額滿為止</CheckItem></li>
+                <li><CheckItem>報名費用：免費（限量開放）</CheckItem></li>
               </ul>
               <div className="rhc-cta-group">
                 <a
@@ -119,11 +119,11 @@ export default function Recruit() {
   );
 }
 
-function CheckItem({ label }) {
+function CheckItem({ children }) {
   return (
     <span className="check-item">
       <IconCheck className="check-icon" />
-      {label}
+      {children}
     </span>
   );
 }

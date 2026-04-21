@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY, EVENT_YEAR } from '../config';
+import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY, EVENT_TIME, EVENT_YEAR } from '../config';
 import { IconDeco, IconHeart, IconBamboo } from './Icons';
 
 // Pure SVG lantern component — replaces 🏮 emoji
@@ -36,12 +36,6 @@ function SvgLantern({ style }) {
   );
 }
 
-// Deco star replacing ✦ in button
-
-// Heart icon replacing ❤️
-
-// Bamboo icon for CTA button
-
 const LANTERN_COUNT = 5;
 
 export default function Footer() {
@@ -62,7 +56,7 @@ export default function Footer() {
             粽夏夜，等你一起做夢
           </h2>
           <p className="fcb-sub">
-            2026年最夢幻的端午夜市體驗，名額有限，不留遺憾
+            {EVENT_YEAR}年最夢幻的端午夜市體驗，名額有限，不留遺憾
           </p>
           <div className="fcb-cta-group">
             <a
@@ -75,11 +69,11 @@ export default function Footer() {
               <IconBamboo className="footer-btn-icon" /> 立即報名包粽夥伴
             </a>
             <a
-              href={FORM_URL}
+              href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
-              aria-label="加入粽夏夜（開啟新視窗）"
+              aria-label="加入粽夏夜 LINE 社群（開啟新視窗）"
             >
               加入粽夏夜 <IconDeco className="footer-deco-icon" />
             </a>
@@ -92,7 +86,7 @@ export default function Footer() {
                 <path d="M8 4.5V8L10.5 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
-            活動日期：2026.06.19 ｜ 名額有限，即刻報名
+            活動日期：{EVENT_DATE_DISPLAY} ｜ 名額有限，即刻報名
           </div>
         </div>
       </div>
@@ -127,7 +121,7 @@ export default function Footer() {
               <ul>
                 <li><a href={FORM_URL} target="_blank" rel="noopener noreferrer">立即報名</a></li>
                 <li><span>活動日期：{EVENT_DATE_DISPLAY}</span></li>
-                <li><span>活動時間：16:00 — 22:00</span></li>
+                <li><span>活動時間：{EVENT_TIME}</span></li>
                 <li><span>費用：完全免費</span></li>
               </ul>
             </div>
@@ -137,7 +131,7 @@ export default function Footer() {
         <div className="footer-divider" />
 
         <div className="footer-copyright">
-          <span>© 2026粽夏夜ZONG DREAM. All rights reserved.</span>
+          <span>© {EVENT_YEAR}粽夏夜ZONG DREAM. All rights reserved.</span>
           <span className="footer-made">
             用 <IconHeart className="footer-heart" /> 與粽葉製作
           </span>

@@ -63,6 +63,7 @@ export default function Navbar() {
       )}
 
       <ul
+        id="navbar-links"
         className={`navbar-links ${menuOpen ? 'open' : ''}`}
         role="list"
         aria-label="頁面導覽"
@@ -72,6 +73,19 @@ export default function Navbar() {
             <a href={link.href} onClick={closeMenu}>{link.label}</a>
           </li>
         ))}
+        {/* Mobile-only CTA inside drawer */}
+        <li role="listitem" className="navbar-mobile-cta-item">
+          <a
+            href={FORM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary navbar-mobile-cta"
+            aria-label="立即報名包粽夥伴（開啟新視窗）"
+            onClick={closeMenu}
+          >
+            立即報名 <span className="nav-cta-deco" aria-hidden="true">✦</span>
+          </a>
+        </li>
       </ul>
 
       <a
