@@ -80,10 +80,7 @@ export default function Hero() {
       {/* Content */}
       <div className="hero-content">
         <div className="hero-logo-wrap fade-in visible">
-          <picture>
-            <source srcSet="/logo.webp" type="image/webp" />
-            <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="hero-logo" width="240" height="240" />
-          </picture>
+          <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="hero-logo" width="240" height="240" />
         </div>
 
         <div className="hero-tag fade-up visible delay-1" aria-label="2026端午節限定">
