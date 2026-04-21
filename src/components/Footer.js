@@ -95,10 +95,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="footer-bottom-inner">
           <div className="footer-logo-area">
-            <picture>
-              <source srcSet="/logo.webp" type="image/webp" />
-              <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="footer-logo" width="48" height="48" />
-            </picture>
+            <img src="/logo.png" alt="粽夏夜 ZONG DREAM" className="footer-logo" width="48" height="48" />
             <div>
               <div className="footer-brand">粽夏夜ZONG DREAM</div>
               <div className="footer-tagline">沉浸式端午節體驗</div>
