@@ -1,11 +1,9 @@
 import React from 'react';
 import './Hero.css';
-import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY } from '../config';
+import { FORM_URL, LINE_URL, EVENT_DATE_DISPLAY, EVENT_DATE } from '../config';
 import { IconBamboo, IconLine } from './Icons';
 import { useCountUp } from '../hooks/useCountUp';
-import Countdown from './Countdown';
-
-
+import { useCountdown } from '../hooks/useCountdown';
 
 function LanternString({ count = 8, top = '8%', delay = 0 }) {
   return (
@@ -32,11 +30,23 @@ const PARTICLES = Array.from({ length: 20 }, (_, i) => ({
   height: `${2 + (i * 0.17) % 3}px`,
 }));
 
+function Pad({ value, label }) {
+  const display = String(value).padStart(2, '0');
+  return (
+    <div className="cd-unit">
+      <div className="cd-digits" aria-label={`${value} ${label}`}>
+        {display.split('').map((d, i) => (
+          <span key={i} className="cd-digit">{d}</span>
+        ))}
+      </div>
+      <span className="cd-label">{label}</span>
+    </div>
+  );
+}
+
 export default function Hero() {
-  // Count-up animations for stats (第2、第3個數字格)
-  // 第1格是日期文字，不需要動畫；第2、第3格目前是文字，以後若改為數字可加在這裡
-  // 預留 participant count 作為未來範例
   const participants = useCountUp(200, 1800);
+  const { days, hours, minutes, seconds, isExpired } = useCountdown(EVENT_DATE);
 
   return (
     <section className="hero" id="hero">
@@ -119,29 +129,53 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* 倒數計時器 */}
-        <Countdown />
-
-        <div className="hero-stats fade-up visible delay-5">
-          <div className="stat">
-            <span className="stat-num">{EVENT_DATE_DISPLAY.replace('2026.', '')}</span>
-            <span className="stat-label">活動日期</span>
-          </div>
-          <div className="stat-divider" aria-hidden="true" />
-          <div className="stat">
-            <span
-              ref={participants.ref}
-              className="stat-num"
-              aria-label={`超過 ${participants.value} 人`}
+        {/* 合併倒數 + 統計的資訊卡 */}
+        <div className="hero-info-card fade-up visible delay-5">
+          {isExpired ? (
+            <div className="cd-expired-text" aria-live="polite">粽夏夜活動已開始！🎉</div>
+          ) : (
+            <div
+              className="cd-section"
+              role="timer"
+              aria-label={`距離 ${EVENT_DATE_DISPLAY} 活動開始還有 ${days} 天 ${hours} 小時 ${minutes} 分 ${seconds} 秒`}
+              aria-live="off"
             >
-              {participants.value}+
-            </span>
-            <span className="stat-label">預期參與人數</span>
-          </div>
-          <div className="stat-divider" aria-hidden="true" />
-          <div className="stat">
-            <span className="stat-num">∞</span>
-            <span className="stat-label">粽子種類</span>
+              <div className="cd-label-top">距離活動開始</div>
+              <div className="cd-track">
+                <Pad value={days}    label="天" />
+                <span className="cd-sep" aria-hidden="true">:</span>
+                <Pad value={hours}   label="時" />
+                <span className="cd-sep" aria-hidden="true">:</span>
+                <Pad value={minutes} label="分" />
+                <span className="cd-sep" aria-hidden="true">:</span>
+                <Pad value={seconds} label="秒" />
+              </div>
+            </div>
+          )}
+
+          <div className="hero-info-divider" aria-hidden="true" />
+
+          <div className="hero-stats">
+            <div className="stat">
+              <span className="stat-num">{EVENT_DATE_DISPLAY.replace('2026.', '')}</span>
+              <span className="stat-label">活動日期</span>
+            </div>
+            <div className="stat-divider" aria-hidden="true" />
+            <div className="stat">
+              <span
+                ref={participants.ref}
+                className="stat-num"
+                aria-label={`超過 ${participants.value} 人`}
+              >
+                {participants.value}+
+              </span>
+              <span className="stat-label">預期參與人數</span>
+            </div>
+            <div className="stat-divider" aria-hidden="true" />
+            <div className="stat">
+              <span className="stat-num">∞</span>
+              <span className="stat-label">粽子種類</span>
+            </div>
           </div>
         </div>
       </div>
